@@ -142,8 +142,8 @@ function renderAbout(){
 function toast(message){document.querySelector('.toast')?.remove();const div=document.createElement('div');div.className='toast';div.setAttribute('role','status');div.textContent=message;document.body.append(div);setTimeout(()=>div.remove(),3000);}
 function route(){
  const path=location.hash.slice(1)||'/';
- document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('active',a.hash==='#'+(path==='/about'?'/about':'/')));
- if(path==='/about')renderAbout();else if(path.startsWith('/device/')){const id=path.slice(8),d=devices.find(d=>d.id===id);if(d)renderDevice(d);else {current=null;main.innerHTML='<div class="empty"><h1>Device not found</h1><p>This model is not in the catalog yet.</p><a class="button-link" href="#/">Back to devices</a></div>';}}else renderCatalog();
+ document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('active',a.hash==='#'+(['/about','/compare'].includes(path)?path:'/')));
+ if(path==='/compare'){current=null;main.innerHTML='<div class="loading">Loading comparison…</div>';}else if(path==='/about')renderAbout();else if(path.startsWith('/device/')){const id=path.slice(8),d=devices.find(d=>d.id===id);if(d)renderDevice(d);else {current=null;main.innerHTML='<div class="empty"><h1>Device not found</h1><p>This model is not in the catalog yet.</p><a class="button-link" href="#/">Back to devices</a></div>';}}else renderCatalog();
  window.scrollTo(0,0);
 }
 async function start(){
