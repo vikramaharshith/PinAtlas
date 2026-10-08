@@ -1,0 +1,5 @@
+{
+  "json.schemas": [
+    { "fileMatch": ["/data/devices/*.json"], "url": "./data/device.schema.json" }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pinatlas.example/device.schema.json",
+  "title": "Pin Atlas device",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "name",
+    "manufacturer",
+    "kind",
+    "family",
+    "processor",
+    "description",
+    "layout",
+    "specs",
+    "pins",
+    "notes",
+    "sources",
+    "reviewed",
+    "coverage"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manufacturer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "family": {
+      "type": "string",
+      "minLength": 1
+    },
+    "processor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "coverage": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "enum": [
+        "board",
+        "chip"
+      ]
+    },
+    "reviewed": {
+      "type": "string",
+      "format": "date"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "layout": {
+      "type": "object",
+      "required": [
+        "style",
+        "variant",
+        "accent",
+        "orientation"
+      ],
+      "properties": {
+        "style": {
+          "enum": [
+            "board",
+            "dip",
+            "qfp"
+          ]
+        },
+        "variant": {
+          "type": "string"
+        },
+        "accent": {
+          "type": "string",
+          "pattern": "^#[a-fA-F0-9]{6}$"
+        },
+        "orientation": {
+          "type": "string"
+        }
+      }
+    },
+    "specs": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "url"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://"
+          }
+        }
+      }
+    },
+    "pins": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "type",
+          "side",
+          "position",
+          "functions"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "enum": [
+              "gpio",
+              "input",
+              "analog",
+              "power",
+              "ground",
+              "control",
+              "reserved",
+              "nc"
+            ]
+          },
+          "gpio": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          },
+          "side": {
+            "enum": [
+              "left",
+              "right",
+              "top",
+              "bottom"
+            ]
+          },
+          "position": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "functions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "protocol",
+                "signal",
+                "instance",
+                "mapping"
+              ],
+              "properties": {
+                "protocol": {
+                  "type": "string",
+                  "pattern": "^[A-Z0-9]+$"
+                },
+                "signal": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "instance": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "mapping": {
+                  "enum": [
+                    "fixed",
+                    "alternate",
+                    "default",
+                    "routable",
+                    "usi"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

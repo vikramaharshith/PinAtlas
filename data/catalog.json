@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "devices": [
+    {
+      "id": "arduino-nano-classic"
+    },
+    {
+      "id": "arduino-uno-r3"
+    },
+    {
+      "id": "atmega328p-pdip28"
+    },
+    {
+      "id": "attiny24a-pdip14"
+    },
+    {
+      "id": "attiny25-pdip8"
+    },
+    {
+      "id": "attiny44a-pdip14"
+    },
+    {
+      "id": "attiny45-pdip8"
+    },
+    {
+      "id": "attiny84a-pdip14"
+    },
+    {
+      "id": "attiny85-pdip8"
+    },
+    {
+      "id": "esp32-devkitc-v4-wroom32"
+    },
+    {
+      "id": "raspberry-pi-pico-2"
+    },
+    {
+      "id": "raspberry-pi-pico-w"
+    },
+    {
+      "id": "raspberry-pi-pico"
+    },
+    {
+      "id": "stm32f103c8t6-lqfp48"
+    }
+  ]
+}

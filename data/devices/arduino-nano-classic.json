@@ -1,0 +1,514 @@
+{
+  "schemaVersion": 1,
+  "id": "arduino-nano-classic",
+  "name": "Arduino Nano (classic)",
+  "manufacturer": "Arduino",
+  "kind": "board",
+  "family": "AVR",
+  "processor": "ATmega328P",
+  "description": "A breadboard-friendly AVR board with the UNO programming model and two extra analog inputs.",
+  "layout": {
+    "style": "board",
+    "variant": "Nano 3.x \u00b7 30-pin headers",
+    "accent": "#177d87",
+    "orientation": "Top view \u00b7 Mini-USB connector at top. Main headers only; ICSP is not shown."
+  },
+  "specs": {
+    "core": "8-bit AVR",
+    "clock": "16 MHz",
+    "flash": "32 KB",
+    "sram": "2 KB",
+    "eeprom": "1 KB",
+    "logic": "5 V",
+    "gpio": "20 digital-capable signals",
+    "adc": "8 channels \u00b7 10-bit",
+    "connectivity": "UART \u00b7 SPI \u00b7 I2C",
+    "usb": "Mini-USB via serial bridge",
+    "programming": "Arduino IDE \u00b7 AVR ISP"
+  },
+  "pins": [
+    {
+      "id": "D1",
+      "label": "D1",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX",
+          "instance": "USART0",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "Shared with the USB-to-serial interface.",
+      "gpio": "PD1",
+      "side": "left",
+      "position": 0
+    },
+    {
+      "id": "D0",
+      "label": "D0",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "RX",
+          "instance": "USART0",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "Shared with the USB-to-serial interface.",
+      "gpio": "PD0",
+      "side": "left",
+      "position": 1
+    },
+    {
+      "id": "RESET1",
+      "label": "RESET",
+      "type": "control",
+      "functions": [],
+      "notes": "Active-low reset.",
+      "gpio": null,
+      "side": "left",
+      "position": 2
+    },
+    {
+      "id": "GND1",
+      "label": "GND1",
+      "type": "ground",
+      "functions": [],
+      "notes": "Common ground reference.",
+      "gpio": null,
+      "side": "left",
+      "position": 3
+    },
+    {
+      "id": "D2",
+      "label": "D2",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "IRQ",
+          "signal": "INT0",
+          "instance": "External interrupt",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "PD2",
+      "side": "left",
+      "position": 4
+    },
+    {
+      "id": "D3",
+      "label": "D3",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "PWM",
+          "signal": "OC2B",
+          "instance": "Timer output",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "IRQ",
+          "signal": "INT1",
+          "instance": "External interrupt",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "PD3",
+      "side": "left",
+      "position": 5
+    },
+    {
+      "id": "D4",
+      "label": "D4",
+      "type": "gpio",
+      "functions": [],
+      "notes": "",
+      "gpio": "PD4",
+      "side": "left",
+      "position": 6
+    },
+    {
+      "id": "D5",
+      "label": "D5",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "PWM",
+          "signal": "OC0B",
+          "instance": "Timer output",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "PD5",
+      "side": "left",
+      "position": 7
+    },
+    {
+      "id": "D6",
+      "label": "D6",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "PWM",
+          "signal": "OC0A",
+          "instance": "Timer output",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "PD6",
+      "side": "left",
+      "position": 8
+    },
+    {
+      "id": "D7",
+      "label": "D7",
+      "type": "gpio",
+      "functions": [],
+      "notes": "",
+      "gpio": "PD7",
+      "side": "left",
+      "position": 9
+    },
+    {
+      "id": "D8",
+      "label": "D8",
+      "type": "gpio",
+      "functions": [],
+      "notes": "",
+      "gpio": "PB0",
+      "side": "left",
+      "position": 10
+    },
+    {
+      "id": "D9",
+      "label": "D9",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "PWM",
+          "signal": "OC1A",
+          "instance": "Timer output",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB1",
+      "side": "left",
+      "position": 11
+    },
+    {
+      "id": "D10",
+      "label": "D10",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "SS",
+          "instance": "SPI0",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "OC1B",
+          "instance": "Timer output",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB2",
+      "side": "left",
+      "position": 12
+    },
+    {
+      "id": "D11",
+      "label": "D11",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MOSI",
+          "instance": "SPI0",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "OC2A",
+          "instance": "Timer output",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB3",
+      "side": "left",
+      "position": 13
+    },
+    {
+      "id": "D12",
+      "label": "D12",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MISO",
+          "instance": "SPI0",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB4",
+      "side": "left",
+      "position": 14
+    },
+    {
+      "id": "VIN",
+      "label": "VIN",
+      "type": "power",
+      "functions": [],
+      "notes": "External input to the onboard regulator.",
+      "gpio": null,
+      "side": "right",
+      "position": 0
+    },
+    {
+      "id": "GND2",
+      "label": "GND2",
+      "type": "ground",
+      "functions": [],
+      "notes": "Common ground reference.",
+      "gpio": null,
+      "side": "right",
+      "position": 1
+    },
+    {
+      "id": "RESET2",
+      "label": "RESET",
+      "type": "control",
+      "functions": [],
+      "notes": "Active-low reset.",
+      "gpio": null,
+      "side": "right",
+      "position": 2
+    },
+    {
+      "id": "5V",
+      "label": "5V",
+      "type": "power",
+      "functions": [],
+      "notes": "5 V supply rail.",
+      "gpio": null,
+      "side": "right",
+      "position": 3
+    },
+    {
+      "id": "A7",
+      "label": "A7",
+      "type": "analog",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC7",
+          "instance": "ADC",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "Analog input only; not a digital GPIO.",
+      "gpio": null,
+      "side": "right",
+      "position": 4
+    },
+    {
+      "id": "A6",
+      "label": "A6",
+      "type": "analog",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC6",
+          "instance": "ADC",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "Analog input only; not a digital GPIO.",
+      "gpio": null,
+      "side": "right",
+      "position": 5
+    },
+    {
+      "id": "A5",
+      "label": "A5",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC5",
+          "instance": "ADC",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "TWI0",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "PC5",
+      "side": "right",
+      "position": 6
+    },
+    {
+      "id": "A4",
+      "label": "A4",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC4",
+          "instance": "ADC",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "TWI0",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "PC4",
+      "side": "right",
+      "position": 7
+    },
+    {
+      "id": "A3",
+      "label": "A3",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC3",
+          "instance": "ADC",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "PC3",
+      "side": "right",
+      "position": 8
+    },
+    {
+      "id": "A2",
+      "label": "A2",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC2",
+          "instance": "ADC",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "PC2",
+      "side": "right",
+      "position": 9
+    },
+    {
+      "id": "A1",
+      "label": "A1",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC1",
+          "instance": "ADC",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "PC1",
+      "side": "right",
+      "position": 10
+    },
+    {
+      "id": "A0",
+      "label": "A0",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC0",
+          "instance": "ADC",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "PC0",
+      "side": "right",
+      "position": 11
+    },
+    {
+      "id": "AREF",
+      "label": "AREF",
+      "type": "control",
+      "functions": [],
+      "notes": "Analog-to-digital converter voltage reference.",
+      "gpio": null,
+      "side": "right",
+      "position": 12
+    },
+    {
+      "id": "3V3",
+      "label": "3V3",
+      "type": "power",
+      "functions": [],
+      "notes": "3.3 V supply output.",
+      "gpio": null,
+      "side": "right",
+      "position": 13
+    },
+    {
+      "id": "D13",
+      "label": "D13",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "SCK",
+          "instance": "SPI0",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "Also connected to the onboard LED.",
+      "gpio": "PB5",
+      "side": "right",
+      "position": 14
+    }
+  ],
+  "notes": [
+    "This is the classic ATmega328P Nano, not Nano Every, Nano ESP32, or Nano 33.",
+    "A6 and A7 are analog-only. Both RESET pins share the same signal."
+  ],
+  "sources": [
+    {
+      "title": "Arduino Nano official pinout",
+      "url": "https://content.arduino.cc/assets/Pinout-NANO_latest.pdf"
+    },
+    {
+      "title": "Arduino Nano documentation",
+      "url": "https://docs.arduino.cc/hardware/nano"
+    },
+    {
+      "title": "Microchip ATmega48A/PA/88A/PA/168A/PA/328/P datasheet",
+      "url": "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf"
+    }
+  ],
+  "reviewed": "2026-10-08",
+  "coverage": "Physical pins and common peripheral functions; see sources for complete electrical characteristics and alternate functions."
+}

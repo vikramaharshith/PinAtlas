@@ -1,0 +1,1120 @@
+{
+  "schemaVersion": 1,
+  "id": "raspberry-pi-pico-2",
+  "name": "Raspberry Pi Pico 2",
+  "manufacturer": "Raspberry Pi",
+  "kind": "board",
+  "family": "RP-series",
+  "processor": "RP2350",
+  "description": "A flexible dual-core board with programmable I/O.",
+  "layout": {
+    "style": "board",
+    "variant": "40-pin main header",
+    "accent": "#3d8560",
+    "orientation": "Top view \u00b7 Micro-USB connector at top. SWD debug pads are not shown."
+  },
+  "specs": {
+    "core": "Dual Cortex-M33 or dual Hazard3 RISC-V",
+    "clock": "150 MHz",
+    "flash": "4 MB external QSPI",
+    "sram": "520 KB",
+    "logic": "3.3 V",
+    "gpio": "26 exposed GPIO",
+    "adc": "3 external channels \u00b7 12-bit",
+    "connectivity": "2\u00d7 UART \u00b7 2\u00d7 SPI \u00b7 2\u00d7 I2C \u00b7 PIO",
+    "wireless": "None",
+    "usb": "USB 1.1 host / device",
+    "programming": "Pico SDK \u00b7 MicroPython \u00b7 UF2"
+  },
+  "pins": [
+    {
+      "id": "1",
+      "label": "GP0",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MISO / RX",
+          "instance": "SPI0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX",
+          "instance": "UART0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "I2C0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO0",
+      "side": "left",
+      "position": 0
+    },
+    {
+      "id": "2",
+      "label": "GP1",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "CSn",
+          "instance": "SPI0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "RX",
+          "instance": "UART0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "I2C0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO1",
+      "side": "left",
+      "position": 1
+    },
+    {
+      "id": "3",
+      "label": "GND",
+      "type": "ground",
+      "functions": [],
+      "notes": "Common ground reference.",
+      "gpio": null,
+      "side": "left",
+      "position": 2
+    },
+    {
+      "id": "4",
+      "label": "GP2",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "SCK",
+          "instance": "SPI0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "CTS",
+          "instance": "UART0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "I2C1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO2",
+      "side": "left",
+      "position": 3
+    },
+    {
+      "id": "5",
+      "label": "GP3",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MOSI / TX",
+          "instance": "SPI0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "RTS",
+          "instance": "UART0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "I2C1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO3",
+      "side": "left",
+      "position": 4
+    },
+    {
+      "id": "6",
+      "label": "GP4",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MISO / RX",
+          "instance": "SPI0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX",
+          "instance": "UART1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "I2C0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO4",
+      "side": "left",
+      "position": 5
+    },
+    {
+      "id": "7",
+      "label": "GP5",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "CSn",
+          "instance": "SPI0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "RX",
+          "instance": "UART1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "I2C0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO5",
+      "side": "left",
+      "position": 6
+    },
+    {
+      "id": "8",
+      "label": "GND",
+      "type": "ground",
+      "functions": [],
+      "notes": "Common ground reference.",
+      "gpio": null,
+      "side": "left",
+      "position": 7
+    },
+    {
+      "id": "9",
+      "label": "GP6",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "SCK",
+          "instance": "SPI0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "CTS",
+          "instance": "UART1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "I2C1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO6",
+      "side": "left",
+      "position": 8
+    },
+    {
+      "id": "10",
+      "label": "GP7",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MOSI / TX",
+          "instance": "SPI0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "RTS",
+          "instance": "UART1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "I2C1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO7",
+      "side": "left",
+      "position": 9
+    },
+    {
+      "id": "11",
+      "label": "GP8",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MISO / RX",
+          "instance": "SPI1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX",
+          "instance": "UART1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "I2C0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO8",
+      "side": "left",
+      "position": 10
+    },
+    {
+      "id": "12",
+      "label": "GP9",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "CSn",
+          "instance": "SPI1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "RX",
+          "instance": "UART1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "I2C0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO9",
+      "side": "left",
+      "position": 11
+    },
+    {
+      "id": "13",
+      "label": "GND",
+      "type": "ground",
+      "functions": [],
+      "notes": "Common ground reference.",
+      "gpio": null,
+      "side": "left",
+      "position": 12
+    },
+    {
+      "id": "14",
+      "label": "GP10",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "SCK",
+          "instance": "SPI1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "CTS",
+          "instance": "UART1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "I2C1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO10",
+      "side": "left",
+      "position": 13
+    },
+    {
+      "id": "15",
+      "label": "GP11",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MOSI / TX",
+          "instance": "SPI1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "RTS",
+          "instance": "UART1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "I2C1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO11",
+      "side": "left",
+      "position": 14
+    },
+    {
+      "id": "16",
+      "label": "GP12",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MISO / RX",
+          "instance": "SPI1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX",
+          "instance": "UART0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "I2C0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO12",
+      "side": "left",
+      "position": 15
+    },
+    {
+      "id": "17",
+      "label": "GP13",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "CSn",
+          "instance": "SPI1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "RX",
+          "instance": "UART0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "I2C0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO13",
+      "side": "left",
+      "position": 16
+    },
+    {
+      "id": "18",
+      "label": "GND",
+      "type": "ground",
+      "functions": [],
+      "notes": "Common ground reference.",
+      "gpio": null,
+      "side": "left",
+      "position": 17
+    },
+    {
+      "id": "19",
+      "label": "GP14",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "SCK",
+          "instance": "SPI1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "CTS",
+          "instance": "UART0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "I2C1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO14",
+      "side": "left",
+      "position": 18
+    },
+    {
+      "id": "20",
+      "label": "GP15",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MOSI / TX",
+          "instance": "SPI1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "RTS",
+          "instance": "UART0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "I2C1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO15",
+      "side": "left",
+      "position": 19
+    },
+    {
+      "id": "21",
+      "label": "GP16",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MISO / RX",
+          "instance": "SPI0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX",
+          "instance": "UART0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "I2C0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO16",
+      "side": "right",
+      "position": 19
+    },
+    {
+      "id": "22",
+      "label": "GP17",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "CSn",
+          "instance": "SPI0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "RX",
+          "instance": "UART0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "I2C0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO17",
+      "side": "right",
+      "position": 18
+    },
+    {
+      "id": "23",
+      "label": "GND",
+      "type": "ground",
+      "functions": [],
+      "notes": "Common ground reference.",
+      "gpio": null,
+      "side": "right",
+      "position": 17
+    },
+    {
+      "id": "24",
+      "label": "GP18",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "SCK",
+          "instance": "SPI0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "CTS",
+          "instance": "UART0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "I2C1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO18",
+      "side": "right",
+      "position": 16
+    },
+    {
+      "id": "25",
+      "label": "GP19",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MOSI / TX",
+          "instance": "SPI0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "RTS",
+          "instance": "UART0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "I2C1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO19",
+      "side": "right",
+      "position": 15
+    },
+    {
+      "id": "26",
+      "label": "GP20",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MISO / RX",
+          "instance": "SPI0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX",
+          "instance": "UART1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "I2C0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO20",
+      "side": "right",
+      "position": 14
+    },
+    {
+      "id": "27",
+      "label": "GP21",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "CSn",
+          "instance": "SPI0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "RX",
+          "instance": "UART1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "I2C0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO21",
+      "side": "right",
+      "position": 13
+    },
+    {
+      "id": "28",
+      "label": "GND",
+      "type": "ground",
+      "functions": [],
+      "notes": "Common ground reference.",
+      "gpio": null,
+      "side": "right",
+      "position": 12
+    },
+    {
+      "id": "29",
+      "label": "GP22",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "SCK",
+          "instance": "SPI0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "CTS",
+          "instance": "UART1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "I2C1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO22",
+      "side": "right",
+      "position": 11
+    },
+    {
+      "id": "30",
+      "label": "RUN",
+      "type": "control",
+      "functions": [],
+      "notes": "Pull low to reset the microcontroller.",
+      "gpio": null,
+      "side": "right",
+      "position": 10
+    },
+    {
+      "id": "31",
+      "label": "GP26",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "SCK",
+          "instance": "SPI1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "CTS",
+          "instance": "UART1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "I2C1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "ADC0",
+          "instance": "ADC",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO26",
+      "side": "right",
+      "position": 9
+    },
+    {
+      "id": "32",
+      "label": "GP27",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MOSI / TX",
+          "instance": "SPI1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "RTS",
+          "instance": "UART1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "I2C1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "ADC1",
+          "instance": "ADC",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO27",
+      "side": "right",
+      "position": 8
+    },
+    {
+      "id": "33",
+      "label": "AGND",
+      "type": "ground",
+      "functions": [],
+      "notes": "Analog ground reference.",
+      "gpio": null,
+      "side": "right",
+      "position": 7
+    },
+    {
+      "id": "34",
+      "label": "GP28",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MISO / RX",
+          "instance": "SPI1",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX",
+          "instance": "UART0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "I2C0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "PWM output",
+          "instance": "PWM",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "ADC2",
+          "instance": "ADC",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "GPIO28",
+      "side": "right",
+      "position": 6
+    },
+    {
+      "id": "35",
+      "label": "ADC_VREF",
+      "type": "power",
+      "functions": [],
+      "notes": "ADC reference supply; see board datasheet for filtering and reference options.",
+      "gpio": null,
+      "side": "right",
+      "position": 5
+    },
+    {
+      "id": "36",
+      "label": "3V3",
+      "type": "power",
+      "functions": [],
+      "notes": "Regulated 3.3 V output.",
+      "gpio": null,
+      "side": "right",
+      "position": 4
+    },
+    {
+      "id": "37",
+      "label": "3V3_EN",
+      "type": "control",
+      "functions": [],
+      "notes": "Pull low to disable the onboard 3.3 V regulator.",
+      "gpio": null,
+      "side": "right",
+      "position": 3
+    },
+    {
+      "id": "38",
+      "label": "GND",
+      "type": "ground",
+      "functions": [],
+      "notes": "Common ground reference.",
+      "gpio": null,
+      "side": "right",
+      "position": 2
+    },
+    {
+      "id": "39",
+      "label": "VSYS",
+      "type": "power",
+      "functions": [],
+      "notes": "Main system supply input, 1.8\u20135.5 V.",
+      "gpio": null,
+      "side": "right",
+      "position": 1
+    },
+    {
+      "id": "40",
+      "label": "VBUS",
+      "type": "power",
+      "functions": [],
+      "notes": "USB supply (nominal 5 V).",
+      "gpio": null,
+      "side": "right",
+      "position": 0
+    }
+  ],
+  "notes": [
+    "Highlights show alternate-function candidates, not a preconfigured wiring plan. Select one compatible set of pins per peripheral instance.",
+    "GPIO use 3.3 V logic. Power-supply pins have separate voltage limits.",
+    "Onboard LED and internal board signals are not included in the main-header diagram."
+  ],
+  "sources": [
+    {
+      "title": "Pico-series official documentation",
+      "url": "https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html"
+    },
+    {
+      "title": "Pico 2 official product specifications",
+      "url": "https://www.raspberrypi.com/products/raspberry-pi-pico-2/"
+    },
+    {
+      "title": "RP2350 datasheet",
+      "url": "https://datasheets.raspberrypi.com/rp2350/rp2350-datasheet.pdf"
+    }
+  ],
+  "reviewed": "2026-10-08",
+  "coverage": "Physical pins and common peripheral functions; see sources for complete electrical characteristics and alternate functions."
+}

@@ -1,0 +1,877 @@
+{
+  "schemaVersion": 1,
+  "id": "stm32f103c8t6-lqfp48",
+  "name": "STM32F103C8T6",
+  "manufacturer": "STMicroelectronics",
+  "kind": "chip",
+  "family": "STM32",
+  "processor": "STM32F103C8T6",
+  "description": "A widely used Cortex-M3 microcontroller with timers, analog inputs, USB, and a rich set of serial interfaces.",
+  "layout": {
+    "style": "qfp",
+    "variant": "LQFP-48",
+    "accent": "#485369",
+    "orientation": "Top view \u00b7 Pin 1 upper-left \u00b7 Counterclockwise numbering. LQFP-48 package only."
+  },
+  "specs": {
+    "core": "Arm Cortex-M3",
+    "clock": "Up to 72 MHz",
+    "flash": "64 KB",
+    "sram": "20 KB",
+    "logic": "2.0\u20133.6 V supply",
+    "gpio": "37 I/O \u00b7 alternate-function dependent",
+    "adc": "10 external channels \u00b7 12-bit (LQFP-48)",
+    "connectivity": "3\u00d7 USART \u00b7 2\u00d7 SPI \u00b7 2\u00d7 I2C \u00b7 USB \u00b7 CAN",
+    "programming": "SWD \u00b7 JTAG \u00b7 bootloader"
+  },
+  "pins": [
+    {
+      "id": "1",
+      "label": "VBAT",
+      "type": "power",
+      "functions": [],
+      "notes": "",
+      "gpio": null,
+      "side": "left",
+      "position": 0
+    },
+    {
+      "id": "2",
+      "label": "PC13",
+      "type": "gpio",
+      "functions": [],
+      "notes": "",
+      "gpio": "PC13",
+      "side": "left",
+      "position": 1
+    },
+    {
+      "id": "3",
+      "label": "PC14",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "CLOCK",
+          "signal": "OSC32_IN",
+          "instance": "CLOCK",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "GPIO or oscillator function depending on configuration.",
+      "gpio": "PC14",
+      "side": "left",
+      "position": 2
+    },
+    {
+      "id": "4",
+      "label": "PC15",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "CLOCK",
+          "signal": "OSC32_OUT",
+          "instance": "CLOCK",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "GPIO or oscillator function depending on configuration.",
+      "gpio": "PC15",
+      "side": "left",
+      "position": 3
+    },
+    {
+      "id": "5",
+      "label": "PD0",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "CLOCK",
+          "signal": "OSC_IN",
+          "instance": "CLOCK",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "GPIO or oscillator function depending on configuration.",
+      "gpio": "PD0",
+      "side": "left",
+      "position": 4
+    },
+    {
+      "id": "6",
+      "label": "PD1",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "CLOCK",
+          "signal": "OSC_OUT",
+          "instance": "CLOCK",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "GPIO or oscillator function depending on configuration.",
+      "gpio": "PD1",
+      "side": "left",
+      "position": 5
+    },
+    {
+      "id": "7",
+      "label": "NRST",
+      "type": "control",
+      "functions": [],
+      "notes": "Active-low reset.",
+      "gpio": null,
+      "side": "left",
+      "position": 6
+    },
+    {
+      "id": "8",
+      "label": "VSSA",
+      "type": "ground",
+      "functions": [],
+      "notes": "",
+      "gpio": null,
+      "side": "left",
+      "position": 7
+    },
+    {
+      "id": "9",
+      "label": "VDDA",
+      "type": "power",
+      "functions": [],
+      "notes": "",
+      "gpio": null,
+      "side": "left",
+      "position": 8
+    },
+    {
+      "id": "10",
+      "label": "PA0",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "IN0",
+          "instance": "ADC1 / ADC2",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "CH1",
+          "instance": "TIM2",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA0",
+      "side": "left",
+      "position": 9
+    },
+    {
+      "id": "11",
+      "label": "PA1",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "IN1",
+          "instance": "ADC1 / ADC2",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "CH2",
+          "instance": "TIM2",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA1",
+      "side": "left",
+      "position": 10
+    },
+    {
+      "id": "12",
+      "label": "PA2",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX",
+          "instance": "USART2",
+          "mapping": "default"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "IN2",
+          "instance": "ADC1 / ADC2",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "CH3",
+          "instance": "TIM2",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA2",
+      "side": "left",
+      "position": 11
+    },
+    {
+      "id": "13",
+      "label": "PA3",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "RX",
+          "instance": "USART2",
+          "mapping": "default"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "IN3",
+          "instance": "ADC1 / ADC2",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "CH4",
+          "instance": "TIM2",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA3",
+      "side": "bottom",
+      "position": 0
+    },
+    {
+      "id": "14",
+      "label": "PA4",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "NSS",
+          "instance": "SPI1",
+          "mapping": "default"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "IN4",
+          "instance": "ADC1 / ADC2",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA4",
+      "side": "bottom",
+      "position": 1
+    },
+    {
+      "id": "15",
+      "label": "PA5",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "SCK",
+          "instance": "SPI1",
+          "mapping": "default"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "IN5",
+          "instance": "ADC1 / ADC2",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA5",
+      "side": "bottom",
+      "position": 2
+    },
+    {
+      "id": "16",
+      "label": "PA6",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MISO",
+          "instance": "SPI1",
+          "mapping": "default"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "IN6",
+          "instance": "ADC1 / ADC2",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "CH1",
+          "instance": "TIM3",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA6",
+      "side": "bottom",
+      "position": 3
+    },
+    {
+      "id": "17",
+      "label": "PA7",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MOSI",
+          "instance": "SPI1",
+          "mapping": "default"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "IN7",
+          "instance": "ADC1 / ADC2",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "CH2",
+          "instance": "TIM3",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA7",
+      "side": "bottom",
+      "position": 4
+    },
+    {
+      "id": "18",
+      "label": "PB0",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "IN8",
+          "instance": "ADC1 / ADC2",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "CH3",
+          "instance": "TIM3",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB0",
+      "side": "bottom",
+      "position": 5
+    },
+    {
+      "id": "19",
+      "label": "PB1",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "IN9",
+          "instance": "ADC1 / ADC2",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "CH4",
+          "instance": "TIM3",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB1",
+      "side": "bottom",
+      "position": 6
+    },
+    {
+      "id": "20",
+      "label": "PB2",
+      "type": "gpio",
+      "functions": [],
+      "notes": "Also BOOT1; boot configuration affects use.",
+      "gpio": "PB2",
+      "side": "bottom",
+      "position": 7
+    },
+    {
+      "id": "21",
+      "label": "PB10",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX",
+          "instance": "USART3",
+          "mapping": "default"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "I2C2",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB10",
+      "side": "bottom",
+      "position": 8
+    },
+    {
+      "id": "22",
+      "label": "PB11",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "RX",
+          "instance": "USART3",
+          "mapping": "default"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "I2C2",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB11",
+      "side": "bottom",
+      "position": 9
+    },
+    {
+      "id": "23",
+      "label": "VSS",
+      "type": "ground",
+      "functions": [],
+      "notes": "",
+      "gpio": null,
+      "side": "bottom",
+      "position": 10
+    },
+    {
+      "id": "24",
+      "label": "VDD",
+      "type": "power",
+      "functions": [],
+      "notes": "",
+      "gpio": null,
+      "side": "bottom",
+      "position": 11
+    },
+    {
+      "id": "25",
+      "label": "PB12",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "NSS",
+          "instance": "SPI2",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB12",
+      "side": "right",
+      "position": 11
+    },
+    {
+      "id": "26",
+      "label": "PB13",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "SCK",
+          "instance": "SPI2",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB13",
+      "side": "right",
+      "position": 10
+    },
+    {
+      "id": "27",
+      "label": "PB14",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MISO",
+          "instance": "SPI2",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB14",
+      "side": "right",
+      "position": 9
+    },
+    {
+      "id": "28",
+      "label": "PB15",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MOSI",
+          "instance": "SPI2",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB15",
+      "side": "right",
+      "position": 8
+    },
+    {
+      "id": "29",
+      "label": "PA8",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "PWM",
+          "signal": "CH1",
+          "instance": "TIM1",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA8",
+      "side": "right",
+      "position": 7
+    },
+    {
+      "id": "30",
+      "label": "PA9",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX",
+          "instance": "USART1",
+          "mapping": "default"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "CH2",
+          "instance": "TIM1",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA9",
+      "side": "right",
+      "position": 6
+    },
+    {
+      "id": "31",
+      "label": "PA10",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "RX",
+          "instance": "USART1",
+          "mapping": "default"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "CH3",
+          "instance": "TIM1",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA10",
+      "side": "right",
+      "position": 5
+    },
+    {
+      "id": "32",
+      "label": "PA11",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "USB",
+          "signal": "D\u2212",
+          "instance": "USB FS",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "CAN",
+          "signal": "RX",
+          "instance": "CAN1",
+          "mapping": "default"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "CH4",
+          "instance": "TIM1",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA11",
+      "side": "right",
+      "position": 4
+    },
+    {
+      "id": "33",
+      "label": "PA12",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "USB",
+          "signal": "D+",
+          "instance": "USB FS",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "CAN",
+          "signal": "TX",
+          "instance": "CAN1",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA12",
+      "side": "right",
+      "position": 3
+    },
+    {
+      "id": "34",
+      "label": "PA13",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "DEBUG",
+          "signal": "SWDIO",
+          "instance": "SWD",
+          "mapping": "default"
+        }
+      ],
+      "notes": "Debug function after reset; GPIO / alternate-function use requires appropriate debug configuration.",
+      "gpio": "PA13",
+      "side": "right",
+      "position": 2
+    },
+    {
+      "id": "35",
+      "label": "VSS",
+      "type": "ground",
+      "functions": [],
+      "notes": "",
+      "gpio": null,
+      "side": "right",
+      "position": 1
+    },
+    {
+      "id": "36",
+      "label": "VDD",
+      "type": "power",
+      "functions": [],
+      "notes": "",
+      "gpio": null,
+      "side": "right",
+      "position": 0
+    },
+    {
+      "id": "37",
+      "label": "PA14",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "DEBUG",
+          "signal": "SWCLK",
+          "instance": "SWD",
+          "mapping": "default"
+        }
+      ],
+      "notes": "Debug function after reset; GPIO / alternate-function use requires appropriate debug configuration.",
+      "gpio": "PA14",
+      "side": "top",
+      "position": 11
+    },
+    {
+      "id": "38",
+      "label": "PA15",
+      "type": "gpio",
+      "functions": [],
+      "notes": "Debug function after reset; GPIO / alternate-function use requires appropriate debug configuration.",
+      "gpio": "PA15",
+      "side": "top",
+      "position": 10
+    },
+    {
+      "id": "39",
+      "label": "PB3",
+      "type": "gpio",
+      "functions": [],
+      "notes": "Debug function after reset; GPIO / alternate-function use requires appropriate debug configuration.",
+      "gpio": "PB3",
+      "side": "top",
+      "position": 9
+    },
+    {
+      "id": "40",
+      "label": "PB4",
+      "type": "gpio",
+      "functions": [],
+      "notes": "Debug function after reset; GPIO / alternate-function use requires appropriate debug configuration.",
+      "gpio": "PB4",
+      "side": "top",
+      "position": 8
+    },
+    {
+      "id": "41",
+      "label": "PB5",
+      "type": "gpio",
+      "functions": [],
+      "notes": "",
+      "gpio": "PB5",
+      "side": "top",
+      "position": 7
+    },
+    {
+      "id": "42",
+      "label": "PB6",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "I2C1",
+          "mapping": "default"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "CH1",
+          "instance": "TIM4",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB6",
+      "side": "top",
+      "position": 6
+    },
+    {
+      "id": "43",
+      "label": "PB7",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "I2C1",
+          "mapping": "default"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "CH2",
+          "instance": "TIM4",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB7",
+      "side": "top",
+      "position": 5
+    },
+    {
+      "id": "44",
+      "label": "BOOT0",
+      "type": "control",
+      "functions": [],
+      "notes": "Boot mode selection input.",
+      "gpio": null,
+      "side": "top",
+      "position": 4
+    },
+    {
+      "id": "45",
+      "label": "PB8",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "PWM",
+          "signal": "CH3",
+          "instance": "TIM4",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB8",
+      "side": "top",
+      "position": 3
+    },
+    {
+      "id": "46",
+      "label": "PB9",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "PWM",
+          "signal": "CH4",
+          "instance": "TIM4",
+          "mapping": "default"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB9",
+      "side": "top",
+      "position": 2
+    },
+    {
+      "id": "47",
+      "label": "VSS",
+      "type": "ground",
+      "functions": [],
+      "notes": "",
+      "gpio": null,
+      "side": "top",
+      "position": 1
+    },
+    {
+      "id": "48",
+      "label": "VDD",
+      "type": "power",
+      "functions": [],
+      "notes": "",
+      "gpio": null,
+      "side": "top",
+      "position": 0
+    }
+  ],
+  "notes": [
+    "This chip is not a Blue Pill board. Board headers and power circuits are different.",
+    "Common default peripheral routes are included; AFIO remapped routes are not cataloged in this version.",
+    "USB and CAN share PA11/PA12. A highlighted alternate function is not necessarily usable simultaneously with another."
+  ],
+  "sources": [
+    {
+      "title": "ST STM32F103x8/xB datasheet \u00b7 DS5319 Rev 20",
+      "url": "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf"
+    }
+  ],
+  "reviewed": "2026-10-08",
+  "coverage": "Physical pins and common peripheral functions; see sources for complete electrical characteristics and alternate functions."
+}

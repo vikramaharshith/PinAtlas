@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "id": "attiny25-pdip8",
+  "name": "ATtiny25",
+  "manufacturer": "Microchip",
+  "kind": "chip",
+  "family": "tinyAVR",
+  "processor": "ATtiny25",
+  "description": "A compact eight-pin AVR for small control, sensing, and low-complexity embedded projects.",
+  "layout": {
+    "style": "dip",
+    "variant": "PDIP-8",
+    "accent": "#485369",
+    "orientation": "Top view \u00b7 Notch at top \u00b7 Pin 1 upper-left. PDIP-8 package."
+  },
+  "specs": {
+    "core": "8-bit AVR",
+    "clock": "Up to 20 MHz \u00b7 supply / grade-dependent",
+    "flash": "2 KB",
+    "sram": "128 B",
+    "eeprom": "128 B",
+    "logic": "See voltage / speed grade in datasheet",
+    "gpio": "6 port pins including reset",
+    "adc": "4 channels \u00b7 10-bit",
+    "connectivity": "USI three-wire / two-wire \u00b7 no hardware UART",
+    "programming": "AVR ISP \u00b7 debugWIRE"
+  },
+  "pins": [
+    {
+      "id": "1",
+      "label": "PB5",
+      "type": "control",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC0",
+          "instance": "ADC",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "RESET by default; ADC0 / GPIO use depends on reset fuse configuration.",
+      "gpio": "PB5",
+      "side": "left",
+      "position": 0
+    },
+    {
+      "id": "2",
+      "label": "PB3",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC3",
+          "instance": "ADC",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "CLOCK",
+          "signal": "XTAL1",
+          "instance": "CLOCK",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "OC1B (complementary)",
+          "instance": "Timer1",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB3",
+      "side": "left",
+      "position": 1
+    },
+    {
+      "id": "3",
+      "label": "PB4",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC2",
+          "instance": "ADC",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "CLOCK",
+          "signal": "XTAL2",
+          "instance": "CLOCK",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "OC1B",
+          "instance": "Timer1",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB4",
+      "side": "left",
+      "position": 2
+    },
+    {
+      "id": "4",
+      "label": "GND",
+      "type": "ground",
+      "functions": [],
+      "notes": "",
+      "gpio": null,
+      "side": "left",
+      "position": 3
+    },
+    {
+      "id": "5",
+      "label": "PB0",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "DI / MOSI",
+          "instance": "USI",
+          "mapping": "usi"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "USI",
+          "mapping": "usi"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "OC0A / OC1A",
+          "instance": "Timers",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB0",
+      "side": "right",
+      "position": 3
+    },
+    {
+      "id": "6",
+      "label": "PB1",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "DO / MISO",
+          "instance": "USI",
+          "mapping": "usi"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "OC0B / OC1A (complementary)",
+          "instance": "Timers",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB1",
+      "side": "right",
+      "position": 2
+    },
+    {
+      "id": "7",
+      "label": "PB2",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "USCK / SCK",
+          "instance": "USI",
+          "mapping": "usi"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "USI",
+          "mapping": "usi"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "ADC1",
+          "instance": "ADC",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "IRQ",
+          "signal": "INT0",
+          "instance": "IRQ",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB2",
+      "side": "right",
+      "position": 1
+    },
+    {
+      "id": "8",
+      "label": "VCC",
+      "type": "power",
+      "functions": [],
+      "notes": "",
+      "gpio": null,
+      "side": "right",
+      "position": 0
+    }
+  ],
+  "notes": [
+    "SPI/I2C highlights refer to USI modes. USI is not a full dedicated SPI or I2C peripheral; software support is required.",
+    "PB5 is RESET by default. Some PWM outputs are complementary and share timers."
+  ],
+  "sources": [
+    {
+      "title": "Microchip ATtiny25/45/85 datasheet",
+      "url": "https://ww1.microchip.com/downloads/en/devicedoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf"
+    },
+    {
+      "title": "Microchip product specifications",
+      "url": "https://www.microchip.com/en-us/product/ATtiny25"
+    }
+  ],
+  "reviewed": "2026-10-08",
+  "coverage": "Physical pins and common peripheral functions; see sources for complete electrical characteristics and alternate functions."
+}

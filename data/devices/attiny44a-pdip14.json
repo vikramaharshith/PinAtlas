@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "id": "attiny44a-pdip14",
+  "name": "ATtiny44A",
+  "manufacturer": "Microchip",
+  "kind": "chip",
+  "family": "tinyAVR",
+  "processor": "ATtiny44A",
+  "description": "A fourteen-pin tinyAVR with eight analog channels, timer outputs, and a flexible serial interface.",
+  "layout": {
+    "style": "dip",
+    "variant": "PDIP-14",
+    "accent": "#485369",
+    "orientation": "Top view \u00b7 Notch at top \u00b7 Pin 1 upper-left. PDIP-14 package."
+  },
+  "specs": {
+    "core": "8-bit AVR",
+    "clock": "Up to 20 MHz \u00b7 supply-dependent",
+    "flash": "4 KB",
+    "sram": "256 B",
+    "eeprom": "256 B",
+    "logic": "1.8\u20135.5 V supply \u00b7 speed-dependent",
+    "gpio": "12 port pins including reset / oscillator",
+    "adc": "8 channels \u00b7 10-bit",
+    "connectivity": "USI three-wire / two-wire \u00b7 no hardware UART",
+    "programming": "AVR ISP \u00b7 debugWIRE"
+  },
+  "pins": [
+    {
+      "id": "1",
+      "label": "VCC",
+      "type": "power",
+      "functions": [],
+      "notes": "",
+      "gpio": null,
+      "side": "left",
+      "position": 0
+    },
+    {
+      "id": "2",
+      "label": "PB0",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "CLOCK",
+          "signal": "XTAL1",
+          "instance": "CLOCK",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "Oscillator or GPIO, depending on clock selection.",
+      "gpio": "PB0",
+      "side": "left",
+      "position": 1
+    },
+    {
+      "id": "3",
+      "label": "PB1",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "CLOCK",
+          "signal": "XTAL2",
+          "instance": "CLOCK",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "Oscillator or GPIO, depending on clock selection.",
+      "gpio": "PB1",
+      "side": "left",
+      "position": 2
+    },
+    {
+      "id": "4",
+      "label": "PB3",
+      "type": "control",
+      "functions": [],
+      "notes": "RESET by default; GPIO use depends on reset fuse configuration.",
+      "gpio": "PB3",
+      "side": "left",
+      "position": 3
+    },
+    {
+      "id": "5",
+      "label": "PB2",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "PWM",
+          "signal": "OC0A",
+          "instance": "Timer0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "IRQ",
+          "signal": "INT0",
+          "instance": "IRQ",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "PB2",
+      "side": "left",
+      "position": 4
+    },
+    {
+      "id": "6",
+      "label": "PA7",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC7",
+          "instance": "ADC",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "OC0B",
+          "instance": "Timer0",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA7",
+      "side": "left",
+      "position": 5
+    },
+    {
+      "id": "7",
+      "label": "PA6",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC6",
+          "instance": "ADC",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "MOSI / DI",
+          "instance": "USI",
+          "mapping": "usi"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "USI",
+          "mapping": "usi"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "OC1A",
+          "instance": "Timer1",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA6",
+      "side": "left",
+      "position": 6
+    },
+    {
+      "id": "8",
+      "label": "PA5",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC5",
+          "instance": "ADC",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "MISO / DO",
+          "instance": "USI",
+          "mapping": "usi"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "OC1B",
+          "instance": "Timer1",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA5",
+      "side": "right",
+      "position": 6
+    },
+    {
+      "id": "9",
+      "label": "PA4",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC4",
+          "instance": "ADC",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / USCK",
+          "instance": "USI",
+          "mapping": "usi"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "USI",
+          "mapping": "usi"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA4",
+      "side": "right",
+      "position": 5
+    },
+    {
+      "id": "10",
+      "label": "PA3",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC3",
+          "instance": "ADC",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA3",
+      "side": "right",
+      "position": 4
+    },
+    {
+      "id": "11",
+      "label": "PA2",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC2",
+          "instance": "ADC",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA2",
+      "side": "right",
+      "position": 3
+    },
+    {
+      "id": "12",
+      "label": "PA1",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC1",
+          "instance": "ADC",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA1",
+      "side": "right",
+      "position": 2
+    },
+    {
+      "id": "13",
+      "label": "PA0",
+      "type": "gpio",
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "ADC0",
+          "instance": "ADC",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "",
+      "gpio": "PA0",
+      "side": "right",
+      "position": 1
+    },
+    {
+      "id": "14",
+      "label": "GND",
+      "type": "ground",
+      "functions": [],
+      "notes": "",
+      "gpio": null,
+      "side": "right",
+      "position": 0
+    }
+  ],
+  "notes": [
+    "The highlighted SPI/I2C pins belong to USI; software implements the relevant serial protocol.",
+    "Only the PDIP package is shown. Alternate package pin numbers may differ."
+  ],
+  "sources": [
+    {
+      "title": "Microchip ATtiny24A/44A/84A datasheet",
+      "url": "https://ww1.microchip.com/downloads/en/DeviceDoc/ATtiny24A-44A-84A-DataSheet-DS40002269A.pdf"
+    }
+  ],
+  "reviewed": "2026-10-08",
+  "coverage": "Physical pins and common peripheral functions; see sources for complete electrical characteristics and alternate functions."
+}

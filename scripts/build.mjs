@@ -1,0 +1,10 @@
+import {mkdir,writeFile,rm,cp} from 'node:fs/promises';
+import path from 'node:path';
+import {root,loadCatalog} from './validate.mjs';
+const {devices}=await loadCatalog();
+await writeFile(path.join(root,'data/catalog.json'),JSON.stringify({schemaVersion:1,devices:devices.map(d=>({id:d.id}))},null,2)+'\n');
+const dist=path.join(root,'dist');
+await rm(dist,{recursive:true,force:true});await mkdir(dist,{recursive:true});
+for(const file of ['index.html','styles.css','app.js','lib.js','favicon.svg','data'])await cp(path.join(root,file),path.join(dist,file),{recursive:true});
+await writeFile(path.join(dist,'.nojekyll'),'');
+console.log(`Built ${devices.length} devices. Static output: dist/`);
