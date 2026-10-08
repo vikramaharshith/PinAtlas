@@ -31,7 +31,7 @@ function decorate(){
  });
  document.querySelectorAll('[data-compare-id]').forEach(button=>{
    const active=selected.includes(button.dataset.compareId);
-   button.textContent=active?'✓ Added to compare':'+ Add to compare';
+   const label=active?'✓ Added to compare':'+ Add to compare';if(button.textContent!==label)button.textContent=label;
    button.classList.toggle('is-selected',active);
    button.setAttribute('aria-pressed',String(active));
    button.setAttribute('aria-label',(active?'Remove from':'Add to')+' comparison');
@@ -47,7 +47,7 @@ function decorate(){
  if(!selected.length){old?.remove();return;}
  const tray=old||document.createElement('div');
  tray.id='comparison-tray';tray.className='comparison-tray';tray.setAttribute('role','region');tray.setAttribute('aria-label','Comparison selection');
- tray.innerHTML='<span><strong>'+countText()+'</strong> for comparison</span><div><button id="clear-comparison" type="button">Clear</button><a class="compare-open" href="#/compare">Compare now →</a></div>';
+ const trayMarkup='<span><strong>'+countText()+'</strong> for comparison</span><div><button id="clear-comparison" type="button">Clear</button><a class="compare-open" href="#/compare">Compare now →</a></div>';if(tray.innerHTML!==trayMarkup)tray.innerHTML=trayMarkup;
  if(!old)document.body.append(tray);
 }
 async function getDevice(id){
