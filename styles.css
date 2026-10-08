@@ -38,3 +38,16 @@
 .compare-column-heading small{font-weight:400;color:var(--muted)}
 .compare-remove{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:5px;padding:5px 9px;cursor:pointer}
 @media(max-width:760px){.comparison-tray{gap:9px;width:calc(100% - 24px);justify-content:space-between;padding:10px;font-size:11px}.compare-table th,.compare-table td{min-width:200px}.compare-table th:first-child{min-width:125px;width:125px}.compare-toolbar select{min-width:100%}.site-header nav{gap:9px}.site-header .nav-link{font-size:10px}}
+
+/* Centered opening scene, followed by the catalog in normal scroll flow. */
+.catalog-intro{min-height:calc(100svh - 128px);display:grid;place-items:center;padding:24px 0 56px}
+.intro-stage{width:min(100%,720px);display:flex;flex-direction:column;align-items:center;gap:26px;will-change:opacity,transform}
+.catalog-intro .hero-visual{display:block;width:100%;height:auto;aspect-ratio:410 / 245;max-height:58svh}
+.intro-scroll{display:flex;align-items:center;gap:14px;border:1px solid var(--line);border-radius:30px;padding:11px 20px;background:var(--surface);color:var(--muted);font:inherit;font-size:12px;cursor:pointer}
+.intro-scroll:hover,.intro-scroll:focus-visible{color:var(--accent);border-color:var(--accent)}
+.intro-scroll span{font-size:18px}
+#catalog-start{scroll-margin-top:24px;outline:none}
+#catalog-start .hero-stats{margin:0 0 24px}
+@media(max-width:760px){.catalog-intro{min-height:calc(100svh - 101px);padding:20px 0 45px}.intro-stage{gap:22px}.catalog-intro .hero-visual .tag{font-size:8px;top:10px;right:10px}.catalog-intro .hero-visual .caption{font-size:8px;bottom:10px;left:12px}#catalog-start .hero-stats{gap:24px}}
+@media(prefers-reduced-motion:reduce){.intro-stage{will-change:auto}}
+@media print{.catalog-intro{display:none}}

@@ -39,11 +39,32 @@ function miniature(d){
 function heroGraphic(){
  return `<svg viewBox="0 0 410 245" aria-hidden="true"><defs><pattern id="hero-dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".6" fill="currentColor" opacity=".18"/></pattern></defs><rect width="410" height="245" fill="url(#hero-dots)"/><g transform="translate(180 33) rotate(13 40 84)"><rect x="-3" y="5" width="88" height="175" rx="9" fill="#0b433624"/><rect width="82" height="170" rx="7" fill="#327b60"/><rect x="28" y="-3" width="26" height="20" rx="3" fill="#bacbd0"/><rect x="27" y="67" width="30" height="32" rx="2" fill="#1d2f38"/><text x="42" y="85" font-family="monospace" font-size="5" text-anchor="middle" fill="#b7c6c9">RP2040</text><path d="M18 23v33h20v12M65 25v27H49v15M15 111h16v30h36M65 101v20H44" stroke="#93b5a6" stroke-width="1" fill="none"/>${Array.from({length:16},(_,i)=>`<circle cx="8" cy="${21+i*9}" r="2.6" fill="#d9cda1"/><circle cx="74" cy="${21+i*9}" r="2.6" fill="#d9cda1"/>`).join('')}<circle cx="42" cy="120" r="9" fill="none" stroke="#d9e6e0"/><text x="42" y="150" text-anchor="middle" font-family="monospace" font-size="6" fill="#e7f2ec">PICO</text></g><g fill="none" stroke-width="1"><path d="M195 67H138v-8H64" stroke="#3379c6"/><path d="M195 83H124v12H54" stroke="#af67cf"/><path d="M280 138h28v-12h67" stroke="#cd8629"/><path d="M265 170h39v16h65" stroke="#db6572"/></g><g font-family="monospace" font-size="10"><text x="64" y="51" fill="#3379c6">UART0 · TX</text><text x="54" y="111" fill="#af67cf">SPI0 · SCK</text><text x="319" y="118" fill="#cd8629">I2C · SDA</text><text x="319" y="203" fill="#db6572">ADC0</text></g></svg><span class="tag">INTERACTIVE PINOUTS</span><span class="caption">HOVER. HIGHLIGHT. UNDERSTAND.</span>`;
 }
+
+let introFrame=0;
+function updateIntro(){
+ const intro=document.querySelector('.catalog-intro');
+ if(!intro)return;
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const progress=reduced?0:Math.min(1,Math.max(0,window.scrollY/Math.max(1,intro.offsetHeight*.75)));
+ const stage=intro.querySelector('.intro-stage');
+ stage.style.opacity=String(1-progress);
+ stage.style.transform=reduced?'none':`translateY(${-32*progress}px) scale(${1-.035*progress})`;
+ stage.inert=progress>=1;
+}
+function scheduleIntro(){
+ if(introFrame)return;
+ introFrame=requestAnimationFrame(()=>{introFrame=0;updateIntro();});
+}
+window.addEventListener('scroll',scheduleIntro,{passive:true});
+window.addEventListener('resize',scheduleIntro);
+matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',scheduleIntro);
 function renderCatalog(){
  current=null;document.title=`${config.siteName} — Explore every connection`;
- main.innerHTML=`<section class="hero"><div class="hero-copy"><div class="hero-stats"><div><strong>${devices.length}</strong><span>Catalog entries</span></div><div><strong>${new Set(devices.map(d=>d.manufacturer)).size}</strong><span>Manufacturers</span></div><div><strong>${new Set(devices.flatMap(protocolsFor)).size}</strong><span>Pin functions</span></div></div></div><div class="hero-visual">${heroGraphic()}</div></section>
+ main.innerHTML=`<section class="catalog-intro" aria-label="Interactive pinout preview"><div class="intro-stage"><div class="hero-visual">${heroGraphic()}</div><button class="intro-scroll" id="explore-catalog" type="button">Explore devices <span aria-hidden="true">↓</span></button></div></section><div id="catalog-start" tabindex="-1"><div class="hero-stats"><div><strong>${devices.length}</strong><span>Catalog entries</span></div><div><strong>${new Set(devices.map(d=>d.manufacturer)).size}</strong><span>Manufacturers</span></div><div><strong>${new Set(devices.flatMap(protocolsFor)).size}</strong><span>Pin functions</span></div></div></div>
  <div class="search-row"><div class="search-wrap"><span class="search-symbol" aria-hidden="true">⌕</span><input id="catalog-search" type="search" value="${e(filters.query)}" placeholder="Search devices, families, or interfaces…" aria-label="Search devices"><kbd class="shortcut">/</kbd></div><div class="view-toggle" aria-label="Catalog view"><button data-view="grid" class="${view==='grid'?'active':''}" aria-label="Grid view" aria-pressed="${view==='grid'}">▦</button><button data-view="list" class="${view==='list'?'active':''}" aria-label="List view" aria-pressed="${view==='list'}">☰</button></div></div>
  <div class="catalog-layout"><aside class="filters" aria-label="Filter catalog"><div class="filter-heading"><h2>Filters</h2><button class="text-button" id="reset-filters">Reset all</button></div><div class="kind-buttons">${[['','All devices'],['board','Development boards'],['chip','Microcontroller chips']].map(([k,l])=>`<button data-kind="${k}" class="${filters.kind===k?'active':''}" aria-pressed="${filters.kind===k}">${l}<span class="count-pill">${devices.filter(d=>!k||d.kind===k).length}</span></button>`).join('')}</div><div class="filter-group"><label class="filter-label" for="manufacturer">Manufacturer</label><select id="manufacturer"><option value="">All manufacturers</option>${[...new Set(devices.map(d=>d.manufacturer))].sort().map(m=>`<option ${filters.manufacturer===m?'selected':''}>${e(m)}</option>`).join('')}</select></div><div class="filter-group protocol-group"><span class="filter-label">Pin function</span><div class="filter-protocols">${protocolOrder.filter(p=>devices.some(d=>protocolsFor(d).includes(p))).map(p=>`<button data-filter-protocol="${p}" class="${filters.protocol===p?'active':''}" aria-pressed="${filters.protocol===p}">${e(pName(p))}</button>`).join('')}</div></div></aside><section aria-label="Device results"><div class="result-head"><span id="result-count" role="status"></span><label>Sort by <select id="sort"><option value="featured">Featured first</option><option value="name">Name A–Z</option><option value="manufacturer">Manufacturer</option></select></label></div><div id="device-results"></div></section></div>`;
+ document.querySelector('#explore-catalog').addEventListener('click',()=>{const target=document.querySelector('#catalog-start');target.focus({preventScroll:true});target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});});
+ updateIntro();
  document.querySelector('#sort').value=sort;
  document.querySelector('#catalog-search').addEventListener('input',event=>{filters.query=event.target.value;renderResults();});
  document.querySelector('#manufacturer').addEventListener('change',event=>{filters.manufacturer=event.target.value;renderResults();});
