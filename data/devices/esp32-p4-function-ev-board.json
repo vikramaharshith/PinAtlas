@@ -1,0 +1,1031 @@
+{
+  "schemaVersion": 1,
+  "id": "esp32-p4-function-ev-board",
+  "name": "ESP32-P4-Function-EV-Board",
+  "manufacturer": "Espressif",
+  "kind": "board",
+  "family": "ESP32",
+  "processor": "ESP32-P4",
+  "description": "High-performance development board; interactive 40-pin expansion connector reference.",
+  "layout": {
+    "style": "board",
+    "variant": "v1.5.2 \u00b7 J1 expansion",
+    "accent": "#314c70",
+    "connector": "J1",
+    "orientation": "Normalized connector diagram only \u00b7 Pin 1 upper left, pin 2 upper right; odd and even columns increase downward. Locate pin 1 on the actual board before wiring. This is not a whole-board layout."
+  },
+  "specs": {
+    "core": "RISC-V",
+    "clock": "See chip datasheet and board configuration",
+    "flash": "16 MB",
+    "sram": "See chip datasheet",
+    "logic": "3.3 V",
+    "gpio": "40-pin expansion connector",
+    "connectivity": "UART \u00b7 configurable SPI / I2C / PWM; further peripherals on board",
+    "wireless": "Wi-Fi 6 \u00b7 Bluetooth LE via ESP32-C6 companion",
+    "usb": "Multiple USB ports; see board guide",
+    "programming": "ESP-IDF"
+  },
+  "pins": [
+    {
+      "id": "J1.1",
+      "label": "3V3",
+      "type": "power",
+      "gpio": null,
+      "side": "left",
+      "position": 0,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J1.2",
+      "label": "5V",
+      "type": "power",
+      "gpio": null,
+      "side": "right",
+      "position": 0,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J1.3",
+      "label": "GPIO7",
+      "type": "gpio",
+      "gpio": "GPIO7",
+      "side": "left",
+      "position": 1,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.4",
+      "label": "5V",
+      "type": "power",
+      "gpio": null,
+      "side": "right",
+      "position": 1,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J1.5",
+      "label": "GPIO8",
+      "type": "gpio",
+      "gpio": "GPIO8",
+      "side": "left",
+      "position": 2,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.6",
+      "label": "GND",
+      "type": "ground",
+      "gpio": null,
+      "side": "right",
+      "position": 2,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J1.7",
+      "label": "GPIO23",
+      "type": "gpio",
+      "gpio": "GPIO23",
+      "side": "left",
+      "position": 3,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.8",
+      "label": "GPIO37",
+      "type": "gpio",
+      "gpio": "GPIO37",
+      "side": "right",
+      "position": 3,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX",
+          "instance": "UART0",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.9",
+      "label": "GND",
+      "type": "ground",
+      "gpio": null,
+      "side": "left",
+      "position": 4,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J1.10",
+      "label": "GPIO38",
+      "type": "gpio",
+      "gpio": "GPIO38",
+      "side": "right",
+      "position": 4,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "UART",
+          "signal": "RX",
+          "instance": "UART0",
+          "mapping": "alternate"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.11",
+      "label": "GPIO21",
+      "type": "gpio",
+      "gpio": "GPIO21",
+      "side": "left",
+      "position": 5,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.12",
+      "label": "GPIO22",
+      "type": "gpio",
+      "gpio": "GPIO22",
+      "side": "right",
+      "position": 5,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.13",
+      "label": "GPIO20",
+      "type": "gpio",
+      "gpio": "GPIO20",
+      "side": "left",
+      "position": 6,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.14",
+      "label": "GND",
+      "type": "ground",
+      "gpio": null,
+      "side": "right",
+      "position": 6,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J1.15",
+      "label": "GPIO6",
+      "type": "gpio",
+      "gpio": "GPIO6",
+      "side": "left",
+      "position": 7,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.16",
+      "label": "GPIO5",
+      "type": "gpio",
+      "gpio": "GPIO5",
+      "side": "right",
+      "position": 7,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.17",
+      "label": "3V3",
+      "type": "power",
+      "gpio": null,
+      "side": "left",
+      "position": 8,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J1.18",
+      "label": "GPIO4",
+      "type": "gpio",
+      "gpio": "GPIO4",
+      "side": "right",
+      "position": 8,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.19",
+      "label": "GPIO3",
+      "type": "gpio",
+      "gpio": "GPIO3",
+      "side": "left",
+      "position": 9,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.20",
+      "label": "GND",
+      "type": "ground",
+      "gpio": null,
+      "side": "right",
+      "position": 9,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J1.21",
+      "label": "GPIO2",
+      "type": "gpio",
+      "gpio": "GPIO2",
+      "side": "left",
+      "position": 10,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.22",
+      "label": "NC(1)",
+      "type": "nc",
+      "gpio": "GPIO1",
+      "side": "right",
+      "position": 10,
+      "functions": [],
+      "notes": "Not connected in the default board configuration. Requires resistor changes described in the manufacturer guide."
+    },
+    {
+      "id": "J1.23",
+      "label": "NC(0)",
+      "type": "nc",
+      "gpio": "GPIO0",
+      "side": "left",
+      "position": 11,
+      "functions": [],
+      "notes": "Not connected in the default board configuration. Requires resistor changes described in the manufacturer guide."
+    },
+    {
+      "id": "J1.24",
+      "label": "GPIO36",
+      "type": "gpio",
+      "gpio": "GPIO36",
+      "side": "right",
+      "position": 11,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.25",
+      "label": "GND",
+      "type": "ground",
+      "gpio": null,
+      "side": "left",
+      "position": 12,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J1.26",
+      "label": "GPIO32",
+      "type": "gpio",
+      "gpio": "GPIO32",
+      "side": "right",
+      "position": 12,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.27",
+      "label": "NC",
+      "type": "nc",
+      "gpio": null,
+      "side": "left",
+      "position": 13,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J1.28",
+      "label": "NC",
+      "type": "nc",
+      "gpio": null,
+      "side": "right",
+      "position": 13,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J1.29",
+      "label": "GPIO33",
+      "type": "gpio",
+      "gpio": "GPIO33",
+      "side": "left",
+      "position": 14,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.30",
+      "label": "GND",
+      "type": "ground",
+      "gpio": null,
+      "side": "right",
+      "position": 14,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J1.31",
+      "label": "GPIO26",
+      "type": "gpio",
+      "gpio": "GPIO26",
+      "side": "left",
+      "position": 15,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.32",
+      "label": "GPIO54",
+      "type": "gpio",
+      "gpio": "GPIO54",
+      "side": "right",
+      "position": 15,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.33",
+      "label": "GPIO48",
+      "type": "gpio",
+      "gpio": "GPIO48",
+      "side": "left",
+      "position": 16,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.34",
+      "label": "GND",
+      "type": "ground",
+      "gpio": null,
+      "side": "right",
+      "position": 16,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J1.35",
+      "label": "GPIO53",
+      "type": "gpio",
+      "gpio": "GPIO53",
+      "side": "left",
+      "position": 17,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.36",
+      "label": "GPIO46",
+      "type": "gpio",
+      "gpio": "GPIO46",
+      "side": "right",
+      "position": 17,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.37",
+      "label": "GPIO47",
+      "type": "gpio",
+      "gpio": "GPIO47",
+      "side": "left",
+      "position": 18,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.38",
+      "label": "GPIO27",
+      "type": "gpio",
+      "gpio": "GPIO27",
+      "side": "right",
+      "position": 18,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Check the board schematic for sharing with onboard peripherals before configuring this GPIO."
+    },
+    {
+      "id": "J1.39",
+      "label": "GND",
+      "type": "ground",
+      "gpio": null,
+      "side": "left",
+      "position": 19,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J1.40",
+      "label": "NC(45)",
+      "type": "nc",
+      "gpio": "GPIO45",
+      "side": "right",
+      "position": 19,
+      "functions": [],
+      "notes": "Not connected in the default board configuration. Requires resistor changes described in the manufacturer guide."
+    }
+  ],
+  "notes": [
+    "This is the expansion connector, not the physical outline of the board. Pin numbers remain visible in the hover details and table.",
+    "Other onboard connectors and components are excluded. Verify shared peripheral connections in the schematic.",
+    "GPIO-matrix highlights are configurable candidates, not ready-to-use defaults. Exhaustive ADC and IO-mux routes are outside this header-only entry."
+  ],
+  "sources": [
+    {
+      "title": "ESP32-P4-Function-EV-Board v1.5.2 - ESP32-P4 - \u2014 esp-dev-kits latest documentation",
+      "url": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32p4/esp32-p4-function-ev-board/user_guide.html"
+    }
+  ],
+  "reviewed": "2026-10-08",
+  "coverage": "40-pin expansion connector as documented by Espressif; UART0 IO-mux and configurable GPIO-matrix candidates. Default disconnected positions stay unselectable as peripheral routes. Other board connectors and exhaustive alternate functions are excluded."
+}

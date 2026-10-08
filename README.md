@@ -11,7 +11,7 @@ A customizable microcontroller and development-board directory with interactive 
 - One JSON record per device, validation, a template generator and automatic catalog indexing.
 - A GitHub Actions workflow for GitHub Pages; hash routes and relative paths work under repository subpaths.
 
-The starter catalog has **14 entries**, not every microcontroller ever produced. It includes Arduino UNO R3, classic Nano, Raspberry Pi Pico/Pico W/Pico 2, ESP32-DevKitC V4 with WROOM-32, ATmega328P PDIP-28, ATtiny25/45/85 PDIP-8, ATtiny24A/44A/84A PDIP-14, and STM32F103C8T6 LQFP-48. Pin maps cover the displayed physical pins and common functions. See each device's sources for exhaustive electrical data and alternate-function tables.
+The starter catalog has **30 entries**, not every microcontroller ever produced. It includes Arduino UNO R3, classic Nano, Raspberry Pi Pico/Pico W/Pico 2, ESP32-DevKitC V4 with WROOM-32, ESP32 S2/S3/C2/C3/C5/C6/C61/H2 development boards, P4/S31 expansion-header references, Seeed XIAO ESP32-C3/S3/S3 Sense/C5/C6, ATmega328P PDIP-28, ATtiny25/45/85 PDIP-8, ATtiny24A/44A/84A PDIP-14, and STM32F103C8T6 LQFP-48. Pin maps cover the displayed physical pins and common functions. See each device's sources for exhaustive electrical data and alternate-function tables.
 
 ## Run and build
 
@@ -72,3 +72,5 @@ Replace all placeholders with manufacturer-verified data before committing. Run 
 Diagrams are original schematic illustrations, not to scale. Manufacturer documents are linked, not republished. Manufacturer names and trademarks belong to their owners. This project is an independent reference. Each record states coverage, sources and its review date. Never infer that highlighting several functions makes them simultaneously usable.
 
 There is no backend or remote editor. Future content updates are made through source JSON files and Git commits. A future admin editor, comparison tool, additional package renderer, or CMS can be added without replacing the data model.
+
+ESP32 coverage is a curated selection of exact boards and revisions, not every commercial module or third-party board. H4 and H21 are not yet included. Seeed entries show the 14 edge connections; P4 and S31 entries show only their 40-pin expansion connector.

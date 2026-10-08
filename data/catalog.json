@@ -29,7 +29,40 @@
       "id": "attiny85-pdip8"
     },
     {
+      "id": "esp32-c3-devkitc-02"
+    },
+    {
+      "id": "esp32-c3-devkitm-1"
+    },
+    {
+      "id": "esp32-c5-devkitc-1"
+    },
+    {
+      "id": "esp32-c6-devkitc-1"
+    },
+    {
+      "id": "esp32-c61-devkitc-1"
+    },
+    {
       "id": "esp32-devkitc-v4-wroom32"
+    },
+    {
+      "id": "esp32-h2-devkitm-1"
+    },
+    {
+      "id": "esp32-p4-function-ev-board"
+    },
+    {
+      "id": "esp32-s2-saola-1"
+    },
+    {
+      "id": "esp32-s3-devkitc-1-n8r8"
+    },
+    {
+      "id": "esp32-s31-function-coreboard-1"
+    },
+    {
+      "id": "esp8684-devkitm-1"
     },
     {
       "id": "raspberry-pi-pico-2"
@@ -39,6 +72,21 @@
     },
     {
       "id": "raspberry-pi-pico"
+    },
+    {
+      "id": "seeed-xiao-esp32-c3"
+    },
+    {
+      "id": "seeed-xiao-esp32-c5"
+    },
+    {
+      "id": "seeed-xiao-esp32-c6"
+    },
+    {
+      "id": "seeed-xiao-esp32-s3-sense"
+    },
+    {
+      "id": "seeed-xiao-esp32-s3"
     },
     {
       "id": "stm32f103c8t6-lqfp48"

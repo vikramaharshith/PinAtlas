@@ -1,0 +1,558 @@
+{
+  "schemaVersion": 1,
+  "id": "seeed-xiao-esp32-s3-sense",
+  "name": "Seeed XIAO ESP32-S3 Sense",
+  "manufacturer": "Seeed Studio",
+  "kind": "board",
+  "family": "ESP32",
+  "processor": "ESP32-S3",
+  "description": "XIAO ESP32-S3 Sense with camera, microphone, and microSD expansion; main edge header map.",
+  "layout": {
+    "style": "board",
+    "variant": "Sense \u00b7 14 edge connections",
+    "accent": "#38544a",
+    "usbPosition": "top",
+    "orientation": "Top/component view \u00b7 USB-C at top. D0 is upper left; 5V is upper right."
+  },
+  "specs": {
+    "core": "Dual Xtensa LX7",
+    "clock": "Up to 240 MHz",
+    "flash": "8 MB",
+    "sram": "512 KB",
+    "psram": "8 MB",
+    "logic": "3.3 V",
+    "gpio": "11 edge GPIO",
+    "adc": "Only exposed edge ADC channels are highlighted",
+    "connectivity": "UART \u00b7 SPI \u00b7 I2C \u00b7 PWM",
+    "wireless": "2.4 GHz Wi-Fi \u00b7 Bluetooth LE",
+    "usb": "USB-C",
+    "programming": "Arduino ESP32 core \u00b7 ESP-IDF"
+  },
+  "pins": [
+    {
+      "id": "D0",
+      "label": "D0",
+      "type": "gpio",
+      "gpio": "GPIO1",
+      "side": "left",
+      "position": 0,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "CH0",
+          "instance": "ADC1",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D1",
+      "label": "D1",
+      "type": "gpio",
+      "gpio": "GPIO2",
+      "side": "left",
+      "position": 1,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "CH1",
+          "instance": "ADC1",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D2",
+      "label": "D2",
+      "type": "gpio",
+      "gpio": "GPIO3",
+      "side": "left",
+      "position": 2,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "CH2",
+          "instance": "ADC1",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": "Strapping pin: preserve required boot/reset levels."
+    },
+    {
+      "id": "D3",
+      "label": "D3",
+      "type": "gpio",
+      "gpio": "GPIO4",
+      "side": "left",
+      "position": 3,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "CH3",
+          "instance": "ADC1",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D4",
+      "label": "D4",
+      "type": "gpio",
+      "gpio": "GPIO5",
+      "side": "left",
+      "position": 4,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "I2C0",
+          "mapping": "default"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "CH4",
+          "instance": "ADC1",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D5",
+      "label": "D5",
+      "type": "gpio",
+      "gpio": "GPIO6",
+      "side": "left",
+      "position": 5,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "I2C0",
+          "mapping": "default"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "CH5",
+          "instance": "ADC1",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D6",
+      "label": "D6",
+      "type": "gpio",
+      "gpio": "GPIO43",
+      "side": "left",
+      "position": 6,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX",
+          "instance": "UART0",
+          "mapping": "default"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "5V",
+      "label": "5V",
+      "type": "power",
+      "gpio": null,
+      "side": "right",
+      "position": 0,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "GND",
+      "label": "GND",
+      "type": "ground",
+      "gpio": null,
+      "side": "right",
+      "position": 1,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "3V3",
+      "label": "3V3",
+      "type": "power",
+      "gpio": null,
+      "side": "right",
+      "position": 2,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "D10",
+      "label": "D10",
+      "type": "gpio",
+      "gpio": "GPIO9",
+      "side": "right",
+      "position": 3,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "MOSI",
+          "instance": "SPI",
+          "mapping": "default"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "CH8",
+          "instance": "ADC1",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": " Shared with the Sense microSD SPI bus."
+    },
+    {
+      "id": "D9",
+      "label": "D9",
+      "type": "gpio",
+      "gpio": "GPIO8",
+      "side": "right",
+      "position": 4,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "MISO",
+          "instance": "SPI",
+          "mapping": "default"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "CH7",
+          "instance": "ADC1",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": " Shared with the Sense microSD SPI bus."
+    },
+    {
+      "id": "D8",
+      "label": "D8",
+      "type": "gpio",
+      "gpio": "GPIO7",
+      "side": "right",
+      "position": 5,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK",
+          "instance": "SPI",
+          "mapping": "default"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "CH6",
+          "instance": "ADC1",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": " Shared with the Sense microSD SPI bus."
+    },
+    {
+      "id": "D7",
+      "label": "D7",
+      "type": "gpio",
+      "gpio": "GPIO44",
+      "side": "right",
+      "position": 6,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "UART",
+          "signal": "RX",
+          "instance": "UART0",
+          "mapping": "default"
+        }
+      ],
+      "notes": ""
+    }
+  ],
+  "notes": [
+    "D labels are board aliases; GPIO numbers identify chip pins. Board defaults are distinguished from configurable GPIO-matrix candidates.",
+    "Only the 14 edge connections are drawn. Battery pads, underside pads, buttons, LEDs, antenna connector, and expansion connectors are excluded.",
+    "Use the exact board selection in your development environment. USB signals are internal to the USB-C connector and are not shown as edge pins.",
+    "Sense expansion: microSD shares D8/SCK, D9/MISO, D10/MOSI and uses GPIO21 for CS. Camera, microphone and expansion connector pins are not drawn."
+  ],
+  "sources": [
+    {
+      "title": "Getting Started with Seeed Studio XIAO ESP32-S3 Series | Seeed Studio Wiki",
+      "url": "https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/"
+    }
+  ],
+  "reviewed": "2026-10-08",
+  "coverage": "Sense main 14-pin edge header only. Camera, microphone, microSD and board-to-board connector wiring must be checked in the official expansion pin tables."
+}

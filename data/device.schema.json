@@ -93,6 +93,17 @@
         },
         "orientation": {
           "type": "string"
+        },
+        "usbPosition": {
+          "type": "string",
+          "enum": [
+            "top",
+            "bottom"
+          ]
+        },
+        "connector": {
+          "type": "string",
+          "description": "When set, render a normalized connector-only diagram labelled with this header name."
         }
       }
     },

@@ -46,3 +46,23 @@ test('all catalog links and imports are relative for GitHub project subpaths',as
  const html=await readFile(new URL('../index.html',import.meta.url),'utf8');assert.ok(!/\b(?:src|href)="\/(?!\/)/.test(html));
  const app=await readFile(new URL('../app.js',import.meta.url),'utf8');assert.ok(app.includes("read('./data/config.json')"));assert.ok(app.includes('#/device/'));
 });
+test('XIAO defaults preserve board labels and chip GPIO mappings',()=>{
+ const maps={c3:[2,3,4,5,6,7,21,20,8,9,10],s3:[1,2,3,4,5,6,43,44,7,8,9],c6:[0,1,2,21,22,23,16,17,19,20,18],c5:[1,0,25,7,23,24,11,12,8,9,10]};
+ for(const [family,map] of Object.entries(maps)){
+  const d=device('seeed-xiao-esp32-'+family);assert.equal(d.pins.length,14);assert.equal(d.layout.usbPosition,'top');
+  map.forEach((g,i)=>assert.equal(d.pins.find(p=>p.label==='D'+i).gpio,'GPIO'+g));
+  for(const [protocol,labels] of Object.entries({UART:['D6','D7'],I2C:['D4','D5'],SPI:['D10','D8','D9']}))assert.deepEqual(d.pins.filter(p=>matchingFunctions(p,[protocol],'',true).length).map(p=>p.label).sort(),labels);
+ }
+});
+test('ESP32 module reservations and disconnected header positions never highlight',()=>{
+ for(const id of ['esp32-s3-devkitc-1-n8r8','esp32-c5-devkitc-1','esp32-c61-devkitc-1','esp32-h2-devkitm-1','esp32-p4-function-ev-board']){
+  const d=device(id);const blocked=d.pins.filter(p=>['reserved','nc'].includes(p.type));assert.ok(blocked.length);for(const p of blocked)assert.equal(p.functions.length,0);
+ }
+ const s3=device('esp32-s3-devkitc-1-n8r8');for(const g of [35,36,37])assert.equal(s3.pins.find(p=>p.gpio==='GPIO'+g).type,'reserved');
+ assert.equal(device('esp8684-devkitm-1').pins.find(p=>p.gpio==='GPIO5').functions.some(f=>f.protocol==='ADC'),false);
+});
+test('expansion headers retain odd/even physical numbering',()=>{
+ for(const [id,h] of [['esp32-p4-function-ev-board','J1'],['esp32-s31-function-coreboard-1','J2']]){
+  const d=device(id);assert.equal(d.pins.length,40);assert.equal(d.layout.connector,h);const geo=pinGeometry(d);assert.equal(geo.pins.find(p=>p.id===h+'.1').y,geo.pins.find(p=>p.id===h+'.2').y);assert.equal(d.pins.find(p=>p.id===h+'.39').side,'left');
+ }
+});

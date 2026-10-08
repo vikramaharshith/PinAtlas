@@ -92,3 +92,7 @@ The JSON Schema in `data/device.schema.json` documents the format for editor sup
 The starter loads all device JSON files at startup, appropriate for this small dataset. For hundreds or thousands of records, generate summary fields into `catalog.json`, load summaries for search, and fetch the full pin record only when opening its page. This can be added while preserving per-device files and hash URLs.
 
 Recommended next extensions: additional package variants, a vendor import pipeline with review, versioned source provenance, a comparison view, image-backed diagrams with normalized pin coordinates, and a browser editor that exports JSON. GitHub Pages remains static hosting; authenticated multi-user editing needs a separate service.
+
+### Board orientation and connector references
+
+Set `layout.usbPosition` to `top` or `bottom` for the board illustration. Set `layout.connector` to the connector name (for example `J1`) for a connector-only drawing. For dual-row headers, put odd pins on the left and even pins on the right, and explicitly describe the normalized orientation in `layout.orientation`. Always retain actual connector pin numbers in `pins[].id`.

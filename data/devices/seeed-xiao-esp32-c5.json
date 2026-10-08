@@ -1,0 +1,509 @@
+{
+  "schemaVersion": 1,
+  "id": "seeed-xiao-esp32-c5",
+  "name": "Seeed XIAO ESP32-C5",
+  "manufacturer": "Seeed Studio",
+  "kind": "board",
+  "family": "ESP32",
+  "processor": "ESP32-C5",
+  "description": "Compact Seeed Studio XIAO board with labelled Arduino pins and configurable ESP32 peripherals.",
+  "layout": {
+    "style": "board",
+    "variant": "Standard \u00b7 14 edge connections",
+    "accent": "#38544a",
+    "usbPosition": "top",
+    "orientation": "Top/component view \u00b7 USB-C at top. D0 is upper left; 5V is upper right."
+  },
+  "specs": {
+    "core": "Single RISC-V",
+    "clock": "Up to 240 MHz",
+    "flash": "8 MB",
+    "sram": "384 KB",
+    "psram": "8 MB",
+    "logic": "3.3 V",
+    "gpio": "11 edge GPIO",
+    "adc": "Only exposed edge ADC channels are highlighted",
+    "connectivity": "UART \u00b7 SPI \u00b7 I2C \u00b7 PWM",
+    "wireless": "2.4 / 5 GHz Wi-Fi 6 \u00b7 Bluetooth LE \u00b7 IEEE 802.15.4",
+    "usb": "USB-C",
+    "programming": "Arduino ESP32 core \u00b7 ESP-IDF"
+  },
+  "pins": [
+    {
+      "id": "D0",
+      "label": "D0",
+      "type": "gpio",
+      "gpio": "GPIO1",
+      "side": "left",
+      "position": 0,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "ADC",
+          "signal": "CH0",
+          "instance": "ADC1",
+          "mapping": "fixed"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D1",
+      "label": "D1",
+      "type": "gpio",
+      "gpio": "GPIO0",
+      "side": "left",
+      "position": 1,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D2",
+      "label": "D2",
+      "type": "gpio",
+      "gpio": "GPIO25",
+      "side": "left",
+      "position": 2,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Strapping pin: preserve required boot/reset levels."
+    },
+    {
+      "id": "D3",
+      "label": "D3",
+      "type": "gpio",
+      "gpio": "GPIO7",
+      "side": "left",
+      "position": 3,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Strapping pin: preserve required boot/reset levels."
+    },
+    {
+      "id": "D4",
+      "label": "D4",
+      "type": "gpio",
+      "gpio": "GPIO23",
+      "side": "left",
+      "position": 4,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA",
+          "instance": "I2C0",
+          "mapping": "default"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D5",
+      "label": "D5",
+      "type": "gpio",
+      "gpio": "GPIO24",
+      "side": "left",
+      "position": 5,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SCL",
+          "instance": "I2C0",
+          "mapping": "default"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D6",
+      "label": "D6",
+      "type": "gpio",
+      "gpio": "GPIO11",
+      "side": "left",
+      "position": 6,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX",
+          "instance": "UART0",
+          "mapping": "default"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "5V",
+      "label": "5V",
+      "type": "power",
+      "gpio": null,
+      "side": "right",
+      "position": 0,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "GND",
+      "label": "GND",
+      "type": "ground",
+      "gpio": null,
+      "side": "right",
+      "position": 1,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "3V3",
+      "label": "3V3",
+      "type": "power",
+      "gpio": null,
+      "side": "right",
+      "position": 2,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "D10",
+      "label": "D10",
+      "type": "gpio",
+      "gpio": "GPIO10",
+      "side": "right",
+      "position": 3,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "MOSI",
+          "instance": "SPI",
+          "mapping": "default"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D9",
+      "label": "D9",
+      "type": "gpio",
+      "gpio": "GPIO9",
+      "side": "right",
+      "position": 4,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "MISO",
+          "instance": "SPI",
+          "mapping": "default"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D8",
+      "label": "D8",
+      "type": "gpio",
+      "gpio": "GPIO8",
+      "side": "right",
+      "position": 5,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK",
+          "instance": "SPI",
+          "mapping": "default"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "D7",
+      "label": "D7",
+      "type": "gpio",
+      "gpio": "GPIO12",
+      "side": "right",
+      "position": 6,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "UART",
+          "signal": "RX",
+          "instance": "UART0",
+          "mapping": "default"
+        }
+      ],
+      "notes": ""
+    }
+  ],
+  "notes": [
+    "D labels are board aliases; GPIO numbers identify chip pins. Board defaults are distinguished from configurable GPIO-matrix candidates.",
+    "Only the 14 edge connections are drawn. Battery pads, underside pads, buttons, LEDs, antenna connector, and expansion connectors are excluded.",
+    "Use the exact board selection in your development environment. USB signals are internal to the USB-C connector and are not shown as edge pins."
+  ],
+  "sources": [
+    {
+      "title": "Getting Started with Seeed Studio XIAO ESP32-C5 | Seeed Studio Wiki",
+      "url": "https://wiki.seeedstudio.com/xiao_esp32c5_getting_started/"
+    }
+  ],
+  "reviewed": "2026-10-08",
+  "coverage": "Standard XIAO 14-pin edge header, UART/SPI/I2C defaults, ADC channels, and GPIO-matrix candidates. Additional underside pads and expansion hardware are outside this diagram."
+}

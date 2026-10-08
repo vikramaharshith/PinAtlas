@@ -1,0 +1,1012 @@
+{
+  "schemaVersion": 1,
+  "id": "esp32-c61-devkitc-1",
+  "name": "ESP32-C61-DevKitC-1",
+  "manufacturer": "Espressif",
+  "kind": "board",
+  "family": "ESP32",
+  "processor": "ESP32-C61",
+  "description": "ESP32-C61-DevKitC-1 development board with a revision-specific interactive header map.",
+  "layout": {
+    "style": "board",
+    "variant": "v2.0 \u00b7 HR2 module",
+    "accent": "#314c70",
+    "usbPosition": "bottom",
+    "orientation": "Top view \u00b7 Antenna at top, USB at bottom. Header numbering increases downward."
+  },
+  "specs": {
+    "core": "Single RISC-V",
+    "clock": "Up to 160 MHz",
+    "flash": "Up to 8 MB; see module ordering code",
+    "sram": "320 KB",
+    "psram": "2 MB",
+    "logic": "3.3 V",
+    "gpio": "See exposed and reserved header pins",
+    "adc": "See highlighted ADC channels",
+    "connectivity": "UART \u00b7 SPI \u00b7 I2C \u00b7 PWM; see pin functions",
+    "wireless": "2.4 GHz Wi-Fi 6 \u00b7 Bluetooth LE",
+    "usb": "See board guide for bridge and native USB connectors",
+    "programming": "ESP-IDF \u00b7 compatible Arduino core"
+  },
+  "pins": [
+    {
+      "id": "J1.1",
+      "label": "3V3",
+      "type": "power",
+      "gpio": null,
+      "side": "left",
+      "position": 0,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J1.2",
+      "label": "RST",
+      "type": "control",
+      "gpio": null,
+      "side": "left",
+      "position": 1,
+      "functions": [],
+      "notes": "Chip enable/reset, active low."
+    },
+    {
+      "id": "J1.3",
+      "label": "GPIO4",
+      "type": "gpio",
+      "gpio": "GPIO4",
+      "side": "left",
+      "position": 2,
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "CH2",
+          "instance": "ADC1",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "DEBUG",
+          "signal": "MTDI",
+          "instance": "JTAG",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "J1.4",
+      "label": "GPIO5",
+      "type": "gpio",
+      "gpio": "GPIO5",
+      "side": "left",
+      "position": 3,
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "CH3",
+          "instance": "ADC1",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "DEBUG",
+          "signal": "MTCK",
+          "instance": "JTAG",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "J1.5",
+      "label": "GPIO6",
+      "type": "gpio",
+      "gpio": "GPIO6",
+      "side": "left",
+      "position": 4,
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "SCK",
+          "instance": "FSPI",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "DEBUG",
+          "signal": "MTDO",
+          "instance": "JTAG",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "J1.6",
+      "label": "GPIO7",
+      "type": "gpio",
+      "gpio": "GPIO7",
+      "side": "left",
+      "position": 5,
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MOSI",
+          "instance": "FSPI",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Strapping pin: external circuitry must preserve the required boot/reset level."
+    },
+    {
+      "id": "J1.7",
+      "label": "GPIO0",
+      "type": "gpio",
+      "gpio": "GPIO0",
+      "side": "left",
+      "position": 6,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "J1.8",
+      "label": "GPIO1",
+      "type": "gpio",
+      "gpio": "GPIO1",
+      "side": "left",
+      "position": 7,
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "CH0",
+          "instance": "ADC1",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "J1.9",
+      "label": "GPIO8",
+      "type": "gpio",
+      "gpio": "GPIO8",
+      "side": "left",
+      "position": 8,
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "CS0",
+          "instance": "FSPI",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Strapping pin: external circuitry must preserve the required boot/reset level."
+    },
+    {
+      "id": "J1.10",
+      "label": "GPIO29",
+      "type": "gpio",
+      "gpio": "GPIO29",
+      "side": "left",
+      "position": 9,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "J1.11",
+      "label": "GPIO14",
+      "type": "reserved",
+      "gpio": "GPIO14",
+      "side": "left",
+      "position": 10,
+      "functions": [],
+      "notes": "Used by PSRAM on this module configuration; unavailable for external GPIO."
+    },
+    {
+      "id": "J1.12",
+      "label": "GPIO2",
+      "type": "gpio",
+      "gpio": "GPIO2",
+      "side": "left",
+      "position": 11,
+      "functions": [
+        {
+          "protocol": "SPI",
+          "signal": "MISO",
+          "instance": "FSPI",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "J1.13",
+      "label": "GPIO3",
+      "type": "gpio",
+      "gpio": "GPIO3",
+      "side": "left",
+      "position": 12,
+      "functions": [
+        {
+          "protocol": "ADC",
+          "signal": "CH1",
+          "instance": "ADC1",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "DEBUG",
+          "signal": "MTMS",
+          "instance": "JTAG",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "J1.14",
+      "label": "5V",
+      "type": "power",
+      "gpio": null,
+      "side": "left",
+      "position": 13,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J1.15",
+      "label": "G",
+      "type": "ground",
+      "gpio": null,
+      "side": "left",
+      "position": 14,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J1.16",
+      "label": "NC",
+      "type": "nc",
+      "gpio": null,
+      "side": "left",
+      "position": 15,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J3.1",
+      "label": "G",
+      "type": "ground",
+      "gpio": null,
+      "side": "right",
+      "position": 0,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J3.2",
+      "label": "GPIO11",
+      "type": "gpio",
+      "gpio": "GPIO11",
+      "side": "right",
+      "position": 1,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX",
+          "instance": "UART0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "J3.3",
+      "label": "GPIO10",
+      "type": "gpio",
+      "gpio": "GPIO10",
+      "side": "right",
+      "position": 2,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "RX",
+          "instance": "UART0",
+          "mapping": "alternate"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "J3.4",
+      "label": "GPIO24",
+      "type": "gpio",
+      "gpio": "GPIO24",
+      "side": "right",
+      "position": 3,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "J3.5",
+      "label": "GPIO23",
+      "type": "gpio",
+      "gpio": "GPIO23",
+      "side": "right",
+      "position": 4,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "J3.6",
+      "label": "GPIO22",
+      "type": "gpio",
+      "gpio": "GPIO22",
+      "side": "right",
+      "position": 5,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "J3.7",
+      "label": "GPIO28",
+      "type": "gpio",
+      "gpio": "GPIO28",
+      "side": "right",
+      "position": 6,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "J3.8",
+      "label": "GPIO27",
+      "type": "gpio",
+      "gpio": "GPIO27",
+      "side": "right",
+      "position": 7,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "J3.9",
+      "label": "GPIO26",
+      "type": "gpio",
+      "gpio": "GPIO26",
+      "side": "right",
+      "position": 8,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "J3.10",
+      "label": "GPIO25",
+      "type": "gpio",
+      "gpio": "GPIO25",
+      "side": "right",
+      "position": 9,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "J3.11",
+      "label": "GPIO9",
+      "type": "gpio",
+      "gpio": "GPIO9",
+      "side": "right",
+      "position": 10,
+      "functions": [
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Strapping pin: external circuitry must preserve the required boot/reset level."
+    },
+    {
+      "id": "J3.12",
+      "label": "G",
+      "type": "ground",
+      "gpio": null,
+      "side": "right",
+      "position": 11,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J3.13",
+      "label": "GPIO13",
+      "type": "gpio",
+      "gpio": "GPIO13",
+      "side": "right",
+      "position": 12,
+      "functions": [
+        {
+          "protocol": "USB",
+          "signal": "D+",
+          "instance": "USB",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Shared with native USB; avoid repurposing while USB is active."
+    },
+    {
+      "id": "J3.14",
+      "label": "GPIO12",
+      "type": "gpio",
+      "gpio": "GPIO12",
+      "side": "right",
+      "position": 13,
+      "functions": [
+        {
+          "protocol": "USB",
+          "signal": "D-",
+          "instance": "USB",
+          "mapping": "fixed"
+        },
+        {
+          "protocol": "UART",
+          "signal": "TX / RX",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "SPI",
+          "signal": "SCK / MOSI / MISO / CS",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "I2C",
+          "signal": "SDA / SCL",
+          "instance": "GPIO matrix",
+          "mapping": "routable"
+        },
+        {
+          "protocol": "PWM",
+          "signal": "LEDC output",
+          "instance": "LEDC",
+          "mapping": "routable"
+        }
+      ],
+      "notes": "Shared with native USB; avoid repurposing while USB is active."
+    },
+    {
+      "id": "J3.15",
+      "label": "G",
+      "type": "ground",
+      "gpio": null,
+      "side": "right",
+      "position": 14,
+      "functions": [],
+      "notes": ""
+    },
+    {
+      "id": "J3.16",
+      "label": "NC",
+      "type": "nc",
+      "gpio": null,
+      "side": "right",
+      "position": 15,
+      "functions": [],
+      "notes": ""
+    }
+  ],
+  "notes": [
+    "GPIO-matrix candidates require explicit software configuration. Alternate functions are IO-mux routes, not universal Arduino defaults.",
+    "Signals sharing a pin cannot all operate simultaneously. Power pins are not GPIO.",
+    "This entry covers the exact revision and module configuration shown; other boards can have different assignments."
+  ],
+  "sources": [
+    {
+      "title": "ESP32-C61-DevKitC-1 v2.0 - ESP32-C61 - \u2014 esp-dev-kits latest documentation",
+      "url": "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c61/esp32-c61-devkitc-1/user_guide.html"
+    }
+  ],
+  "reviewed": "2026-10-08",
+  "coverage": "Main left and right headers, common IO-mux signals, and configurable GPIO-matrix candidates. Touch, I2S, SDIO, and exhaustive alternate signals are not enumerated. Consult the linked manufacturer guide and chip datasheet for electrical limits and driver restrictions."
+}
