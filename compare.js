@@ -2,7 +2,7 @@ import {escapeHtml as e, protocolsFor} from './lib.js';
 
 const STORAGE_KEY='pinatlas:comparison';
 const main=document.querySelector('#main');
-let catalog=[], selected=[], cache=new Map(), loaded=false;
+let catalog=[], selected=[], cache=new Map(), loaded=false, renderVersion=0;
 const labels={core:'CPU / architecture',clock:'Clock frequency',flash:'Flash memory',sram:'SRAM',eeprom:'EEPROM',logic:'Logic / supply voltage',gpio:'GPIO',adc:'ADC',connectivity:'Interfaces',wireless:'Wireless',usb:'USB',programming:'Programming'};
 const safe=(value)=>e(value==null||value===''?'—':typeof value==='object'?JSON.stringify(value):value);
 const ids=()=>new Set(catalog.map(d=>d.id));
@@ -29,13 +29,6 @@ function decorate(){
    button.type='button';button.className='compare-add';button.dataset.compareId=id;
    wrapper.append(button);
  });
- document.querySelectorAll('[data-compare-id]').forEach(button=>{
-   const active=selected.includes(button.dataset.compareId);
-   const label=active?'✓ Added to compare':'+ Add to compare';if(button.textContent!==label)button.textContent=label;
-   button.classList.toggle('is-selected',active);
-   button.setAttribute('aria-pressed',String(active));
-   button.setAttribute('aria-label',(active?'Remove from':'Add to')+' comparison');
- });
  const actions=document.querySelector('.detail-actions');
  if(actions && !actions.querySelector('.detail-compare')){
    const id=(location.hash.split('/device/')[1]||'');
@@ -43,6 +36,13 @@ function decorate(){
      const button=document.createElement('button');button.type='button';button.className='button-link detail-compare';button.dataset.compareId=id;actions.prepend(button);
    }
  }
+ document.querySelectorAll('[data-compare-id]').forEach(button=>{
+   const active=selected.includes(button.dataset.compareId);
+   const label=active?'✓ Added to compare':'+ Add to compare';if(button.textContent!==label)button.textContent=label;
+   button.classList.toggle('is-selected',active);
+   button.setAttribute('aria-pressed',String(active));
+   button.setAttribute('aria-label',(active?'Remove from':'Add to')+' comparison');
+ });
  const old=document.querySelector('#comparison-tray');
  if(!selected.length){old?.remove();return;}
  const tray=old||document.createElement('div');
@@ -62,8 +62,9 @@ function heading(id){
 }
 async function renderCompare(){
  if(location.hash!=='#/compare')return;
+ const version=++renderVersion;
  document.title='Compare devices — Pin Atlas';
- main.innerHTML='<section class="compare-page"><div class="eyebrow">SIDE-BY-SIDE DEVICE COMPARISON</div><h1>Compare microcontrollers</h1><p>Choose any catalog entries to compare specifications, interfaces, and pin capabilities. Scroll horizontally to see more devices.</p><div class="compare-toolbar"><label for="compare-picker">Add a device</label><select id="compare-picker"><option value="">Choose a catalog entry…</option>'+catalog.filter(d=>!selected.includes(d.id)).map(d=>'<option value="'+e(d.id)+'">'+e(d.name)+'</option>').join('')+'</select><button type="button" id="compare-clear-all" class="button-link">Clear all</button><a class="button-link" href="#/">← Browse catalog</a></div><div id="compare-content" aria-live="polite">Loading comparison…</div></section>';
+ main.innerHTML='<section class="compare-page"><div class="eyebrow">SIDE-BY-SIDE DEVICE COMPARISON</div><h1>Compare microcontrollers</h1><p>Choose any catalog entries to compare specifications, interfaces, and pin capabilities. Scroll horizontally to see more devices.</p><div class="compare-toolbar"><label for="compare-picker">Add a device</label><select id="compare-picker"><option value="">Choose a catalog entry…</option>'+catalog.filter(d=>!selected.includes(d.id)).map(d=>'<option value="'+e(d.id)+'">'+e(d.name+' · '+d.layout.variant)+'</option>').join('')+'</select><button type="button" id="compare-clear-all" class="button-link">Clear all</button><a class="button-link" href="#/">← Browse catalog</a></div><div id="compare-content" aria-live="polite">Loading comparison…</div></section>';
  const picker=main.querySelector('#compare-picker');
  picker.addEventListener('change',()=>{if(picker.value)toggle(picker.value);});
  main.querySelector('#compare-clear-all').addEventListener('click',()=>{selected=[];save();renderCompare();});
@@ -72,7 +73,7 @@ async function renderCompare(){
  if(!selected.length){slot.innerHTML='<div class="compare-empty"><h2>No devices selected yet</h2><p>Add any board or MCU from the dropdown above, or select devices from the catalog.</p><a class="button-link primary" href="#/">Explore devices →</a></div>';return;}
  try{
    const devices=await Promise.all(selected.map(getDevice));
-   if(location.hash!=='#/compare')return;
+   if(location.hash!=='#/compare'||version!==renderVersion||!slot.isConnected)return;
    const keys=[...new Set(devices.flatMap(d=>Object.keys(d.specs||{})))];
    const common=['core','clock','flash','sram','eeprom','logic','gpio','adc','connectivity','wireless','usb','programming'];
    keys.sort((a,b)=>(common.indexOf(a)<0?999:common.indexOf(a))-(common.indexOf(b)<0?999:common.indexOf(b))||a.localeCompare(b));
@@ -94,7 +95,7 @@ async function renderCompare(){
    }).join('');
    slot.innerHTML='<p class="compare-summary">'+devices.length+' '+(devices.length===1?'device':'devices')+' selected · Pin function counts represent catalog mappings, not guaranteed simultaneous use.</p><div class="compare-scroll" tabindex="0" aria-label="Scrollable device comparison"><table class="compare-table"><thead><tr><th scope="col">Specification</th>'+devices.map(d=>'<th scope="col"><div class="compare-column-heading"><a href="#/device/'+e(d.id)+'">'+e(d.name)+'</a><small>'+e(d.manufacturer)+'</small><button type="button" class="compare-remove" data-remove-id="'+e(d.id)+'" aria-label="Remove '+e(d.name)+' from comparison">Remove ×</button></div></th>').join('')+'</tr></thead><tbody>'+rows+'</tbody></table></div>';
    slot.querySelectorAll('[data-remove-id]').forEach(b=>b.addEventListener('click',()=>toggle(b.dataset.removeId)));
- }catch(error){slot.innerHTML='<div class="compare-empty"><h2>Could not load comparison</h2><p>'+e(error.message)+'</p><button class="button-link" id="compare-retry">Try again</button></div>';slot.querySelector('#compare-retry').addEventListener('click',renderCompare);}
+ }catch(error){if(location.hash!=='#/compare'||version!==renderVersion||!slot.isConnected)return;slot.innerHTML='<div class="compare-empty"><h2>Could not load comparison</h2><p>'+e(error.message)+'</p><button class="button-link" id="compare-retry">Try again</button></div>';slot.querySelector('#compare-retry').addEventListener('click',renderCompare);}
 }
 function sync(){
  if(!loaded)return;
@@ -107,14 +108,15 @@ document.addEventListener('click',event=>{
  if(add){event.preventDefault();toggle(add.dataset.compareId);return;}
  if(event.target.closest('#clear-comparison')){selected=[];save();decorate();}
 });
-const observer=new MutationObserver(()=>sync());
-observer.observe(main,{childList:true,subtree:true});
+window.addEventListener('pinatlas:render',sync);
 window.addEventListener('hashchange',()=>queueMicrotask(sync));
 (async()=>{
  try{
    const res=await fetch('./data/catalog.json');if(!res.ok)throw new Error('Catalog unavailable');
-   const index=await res.json();catalog=index.devices||[];
+   const index=await res.json();
+   catalog=await Promise.all((index.devices||[]).map(entry=>getDevice(entry.id)));
+   catalog.sort((a,b)=>a.name.localeCompare(b.name)||a.layout.variant.localeCompare(b.layout.variant));
    try{const persisted=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');if(Array.isArray(persisted))selected=[...new Set(persisted.filter(x=>typeof x==='string'&&ids().has(x)))];}catch{}
    loaded=true;sync();
- }catch(error){console.warn('Compare feature unavailable:',error);}
+ }catch(error){console.warn('Compare feature unavailable:',error);if(location.hash==='#/compare')main.innerHTML='<div class="compare-empty"><h1>Comparison unavailable</h1><p>'+e(error.message)+'</p><button class="button-link" id="compare-reload">Try again</button></div>';main.querySelector('#compare-reload')?.addEventListener('click',()=>location.reload());}
 })();

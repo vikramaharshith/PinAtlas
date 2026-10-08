@@ -58,6 +58,7 @@ function renderResults(){
  const result=filterDevices(devices,filters).sort((a,b)=>sort==='manufacturer'?a.manufacturer.localeCompare(b.manufacturer)||a.name.localeCompare(b.name):sort==='name'?a.name.localeCompare(b.name):Number(b.id===config.featuredDevice)-Number(a.id===config.featuredDevice)||Number(b.kind==='board')-Number(a.kind==='board')||a.name.localeCompare(b.name));
  document.querySelector('#result-count').innerHTML=`<strong>${result.length} ${result.length===1?'device':'devices'}</strong> ${result.length===devices.length?'in the starter catalog':`of ${devices.length} entries`}`;
  document.querySelector('#device-results').innerHTML=result.length?`<div class="device-grid ${view==='list'?'list':''}">${result.map(d=>`<a class="device-card" href="#/device/${e(d.id)}" aria-label="Explore ${e(d.name)}, ${e(d.layout.variant)}"><div class="device-art"><span class="type-badge">${d.kind==='board'?'DEV BOARD':'MCU CHIP'}</span>${miniature(d)}</div><div class="card-body"><div class="card-maker"><span>${e(d.manufacturer)}</span><span>↗</span></div><h3>${e(d.name)}</h3><div class="card-variant">${e(d.layout.variant)}</div><div class="card-specs"><span>${e(d.specs.clock.split(' · ')[0])}</span><span>${e(d.specs.logic.split(' supply')[0])}</span><span>${e(d.specs.flash.split(' external')[0])} flash</span><span>${e(d.specs.sram)} RAM</span></div><div class="chips">${orderedProtocols(d).filter(p=>['UART','SPI','I2C','ADC','PWM','USB'].includes(p)).slice(0,5).map(p=>`<span class="chip">${e(pName(p))}</span>`).join('')}${/Wi-Fi/i.test(d.specs.wireless||'')?'<span class="chip">Wi-Fi</span>':''}</div></div><div class="card-footer"><span>${d.pins.length} ${d.kind==='board'?'header connections':'package pins'}</span><span class="card-arrow">→</span></div></a>`).join('')}</div>`:'<div class="empty"><h2>No matching devices</h2><p>Try a broader search or reset the filters.</p><button id="empty-reset">Reset filters</button></div>';
+ window.dispatchEvent(new CustomEvent('pinatlas:render'));
  document.querySelector('#empty-reset')?.addEventListener('click',()=>{filters={query:'',kind:'',manufacturer:'',protocol:''};renderCatalog();});
 }
 function renderDevice(d){
@@ -144,6 +145,7 @@ function route(){
  const path=location.hash.slice(1)||'/';
  document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('active',a.hash==='#'+(['/about','/compare'].includes(path)?path:'/')));
  if(path==='/compare'){current=null;main.innerHTML='<div class="loading">Loading comparison…</div>';}else if(path==='/about')renderAbout();else if(path.startsWith('/device/')){const id=path.slice(8),d=devices.find(d=>d.id===id);if(d)renderDevice(d);else {current=null;main.innerHTML='<div class="empty"><h1>Device not found</h1><p>This model is not in the catalog yet.</p><a class="button-link" href="#/">Back to devices</a></div>';}}else renderCatalog();
+ window.dispatchEvent(new CustomEvent('pinatlas:render'));
  window.scrollTo(0,0);
 }
 async function start(){
