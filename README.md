@@ -1,6 +1,6 @@
 # Pin Atlas
 
-A customizable microcontroller and development-board directory with interactive pinouts. Vanilla HTML, CSS and modular JavaScript; no framework, database, paid service or dependency installation is needed.
+A customizable microcontroller and development-board directory with interactive pinouts. Vanilla HTML, CSS and modular JavaScript for the catalog, with a React MicroSlats background bundled at build time. No database or paid service is needed.
 
 ## Included
 
@@ -18,6 +18,7 @@ The starter catalog has **30 entries**, not every microcontroller ever produced.
 Requires Node.js 20 or later for tooling. The published site itself runs in a modern browser.
 
 ```bash
+npm ci
 npm test
 npm run build
 ```
@@ -74,3 +75,9 @@ Diagrams are original schematic illustrations, not to scale. Manufacturer docume
 There is no backend or remote editor. Future content updates are made through source JSON files and Git commits. A future admin editor, comparison tool, additional package renderer, or CMS can be added without replacing the data model.
 
 ESP32 coverage is a curated selection of exact boards and revisions, not every commercial module or third-party board. H4 and H21 are not yet included. Seeed entries show the 14 edge connections; P4 and S31 entries show only their 40-pin expansion connector.
+
+### Background and glass controls
+
+Run `npm ci` before `npm test` or `npm run build`. The build bundles a small React background mount with esbuild; catalog and compare stay as vanilla JavaScript modules. `background.jsx` contains the MicroSlats props. `components/MicroSlats.jsx` and `.css` are the exact JS-CSS source from https://reactbits.dev/r/MicroSlats-JS-CSS.json, retrieved 2026-10-08. Its listed dependency is `ogl@^1.0.11`; React and React DOM provide the component runtime. The upstream license is preserved in `components/REACT-BITS-LICENSE.md` and copied into the published output.
+
+The background is decorative and ignores pointer hit testing; MicroSlats listens for pointer movement on the window. Existing reduced-motion and visibility handling come from the component. A static gradient remains when WebGL is unavailable. Dark is the default for new visitors; saved appearance choices are respected. Glass control styles are grouped at the end of `styles.css`.

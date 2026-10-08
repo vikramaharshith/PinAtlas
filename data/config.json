@@ -2,20 +2,64 @@
   "siteName": "Pin Atlas",
   "tagline": "Explore every connection.",
   "description": "Find your next microcontroller. Understand every pin. Start building.",
-  "defaultTheme": "light",
+  "defaultTheme": "dark",
   "defaultAccent": "teal",
   "featuredDevice": "raspberry-pi-pico",
   "protocols": {
-    "UART": { "name": "UART", "color": "#3379c6", "description": "Serial communication: TX, RX, and optional flow-control signals." },
-    "SPI": { "name": "SPI", "color": "#af67cf", "description": "Synchronous serial communication: clock, data in/out, and chip select." },
-    "I2C": { "name": "I²C", "color": "#cd8629", "description": "Two-wire communication: SDA data and SCL clock." },
-    "ADC": { "name": "ADC", "color": "#db6572", "description": "Analog inputs for an analog-to-digital converter." },
-    "PWM": { "name": "PWM", "color": "#279b8b", "description": "Timer-controlled pulse-width-modulated outputs." },
-    "DAC": { "name": "DAC", "color": "#a26831", "description": "Analog outputs from a digital-to-analog converter." },
-    "USB": { "name": "USB", "color": "#5b74bb", "description": "Native USB data signals; a serial bridge is a separate device." },
-    "CAN": { "name": "CAN", "color": "#688d2a", "description": "CAN controller signals; an external transceiver may be required." },
-    "DEBUG": { "name": "Debug", "color": "#b26174", "description": "Programming and debug signals." },
-    "IRQ": { "name": "Interrupt", "color": "#7867b8", "description": "Dedicated external interrupt signals. Other GPIO interrupts may also be available." },
-    "CLOCK": { "name": "Clock", "color": "#828387", "description": "External clock or oscillator connections." }
+    "UART": {
+      "name": "UART",
+      "color": "#3379c6",
+      "description": "Serial communication: TX, RX, and optional flow-control signals."
+    },
+    "SPI": {
+      "name": "SPI",
+      "color": "#af67cf",
+      "description": "Synchronous serial communication: clock, data in/out, and chip select."
+    },
+    "I2C": {
+      "name": "I\u00b2C",
+      "color": "#cd8629",
+      "description": "Two-wire communication: SDA data and SCL clock."
+    },
+    "ADC": {
+      "name": "ADC",
+      "color": "#db6572",
+      "description": "Analog inputs for an analog-to-digital converter."
+    },
+    "PWM": {
+      "name": "PWM",
+      "color": "#279b8b",
+      "description": "Timer-controlled pulse-width-modulated outputs."
+    },
+    "DAC": {
+      "name": "DAC",
+      "color": "#a26831",
+      "description": "Analog outputs from a digital-to-analog converter."
+    },
+    "USB": {
+      "name": "USB",
+      "color": "#5b74bb",
+      "description": "Native USB data signals; a serial bridge is a separate device."
+    },
+    "CAN": {
+      "name": "CAN",
+      "color": "#688d2a",
+      "description": "CAN controller signals; an external transceiver may be required."
+    },
+    "DEBUG": {
+      "name": "Debug",
+      "color": "#b26174",
+      "description": "Programming and debug signals."
+    },
+    "IRQ": {
+      "name": "Interrupt",
+      "color": "#7867b8",
+      "description": "Dedicated external interrupt signals. Other GPIO interrupts may also be available."
+    },
+    "CLOCK": {
+      "name": "Clock",
+      "color": "#828387",
+      "description": "External clock or oscillator connections."
+    }
   }
 }

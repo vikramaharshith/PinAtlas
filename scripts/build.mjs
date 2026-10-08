@@ -1,10 +1,13 @@
 import {mkdir,writeFile,rm,cp} from 'node:fs/promises';
 import path from 'node:path';
+import {build} from 'esbuild';
 import {root,loadCatalog} from './validate.mjs';
 const {devices}=await loadCatalog();
 await writeFile(path.join(root,'data/catalog.json'),JSON.stringify({schemaVersion:1,devices:devices.map(d=>({id:d.id}))},null,2)+'\n');
 const dist=path.join(root,'dist');
 await rm(dist,{recursive:true,force:true});await mkdir(dist,{recursive:true});
 for(const file of ['index.html','styles.css','app.js','compare.js','lib.js','favicon.svg','data'])await cp(path.join(root,file),path.join(dist,file),{recursive:true});
+await build({entryPoints:[path.join(root,'background.jsx')],bundle:true,format:'esm',jsx:'automatic',minify:true,target:['es2020'],outfile:path.join(dist,'background.js'),legalComments:'linked'});
+await cp(path.join(root,'components/REACT-BITS-LICENSE.md'),path.join(dist,'REACT-BITS-LICENSE.md'));
 await writeFile(path.join(dist,'.nojekyll'),'');
 console.log(`Built ${devices.length} devices. Static output: dist/`);
